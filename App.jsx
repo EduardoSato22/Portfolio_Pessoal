@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import minhaFoto from './public/Minha_Foto.jpeg'
+import minhaFoto from './public/Minha_foto.jpeg'
 
 // Assumindo que seus componentes de UI estão neste caminho
 import { Button } from './src/components/ui/button.jsx'
