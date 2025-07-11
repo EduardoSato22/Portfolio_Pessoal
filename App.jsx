@@ -217,7 +217,7 @@ function App() {
                     <Mail className="mr-2 h-4 w-4" /> Entre em Contato
                   </Button>
                   {/* Para o Download funcionar, coloque o CV na pasta /public */}
-                  <Button as="a" href="./public/Curriculo_Eduardo_Sato.pdf" download variant="outline">
+                  <Button as="a" href="/Curriculo_Eduardo_Sato.pdf" download variant="outline">
                     <Download className="mr-2 h-4 w-4" /> Download CV
                   </Button>
                 </div>
