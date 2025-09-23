@@ -1,4 +1,4 @@
-# Como Fazer Deploy do Seu Portfólio no Vercel
+# Como Fazer Deploy na Vercel
 
 Este guia detalha os passos para fazer o deploy do seu site de portfólio (criado com React) na plataforma Vercel. O Vercel é uma plataforma de deploy e hospedagem para projetos frontend, ideal para aplicações React.
 
