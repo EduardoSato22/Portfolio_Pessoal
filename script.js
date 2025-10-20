@@ -141,64 +141,6 @@ async function handleFormSubmit(event) {
   }
 }
 
-// Envio do formulário
-async function handleFormSubmit(event) {
-    event.preventDefault();
-  
-    const form = event.target;
-    const formData = new FormData(form);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    };
-  
-    // Validar formulário
-    const errors = validateForm(data);
-    if (Object.keys(errors).length > 0) {
-      showFormErrors(errors);
-      return;
-    }
-  
-    // Mostrar loading
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.innerHTML;
-    submitButton.innerHTML =
-      '<i data-lucide="loader-2" class="w-4 h-4 mr-2 animate-spin"></i>Enviando...';
-    if (typeof lucide !== 'undefined') {
-      lucide.createIcons(); // Recria o ícone de loading
-    }
-    submitButton.disabled = true;
-  
-    const FORM_ENDPOINT = "https://formspree.io/f/mvgwngje"; 
-  
-    try {
-      // Esta é a chamada REAL da API para o Formspree
-      const response = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json', // Essencial para o Formspree
-        },
-        body: JSON.stringify(data),
-      });
-  
-      if (response.ok) {
-        showSuccessMessage('Mensagem enviada com sucesso!');
-        form.reset();
-      } else {
-        throw new Error('Falha no envio da API');
-      }
-  
-    } catch (error) {
-      console.error(error); // Mostra o erro no console (F12)
-      showErrorMessage('Erro ao enviar mensagem. Tente novamente.');
-    } finally {
-      // Restaurar botão
-      submitButton.innerHTML = originalText;
-      submitButton.disabled = false;
-    }
-  }
 
 // Mostrar erros do formulário
 function showFormErrors(errors) {
