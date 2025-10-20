@@ -1,0 +1,63 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Custom for Visual Studio
+*.cs     diff=csharp
+
+# Standard to msysgit
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF  diff=astextplain
+*.rtf  diff=astextplain
+*.RTF  diff=astextplain
+
+# Markdown files
+*.md text
+*.MD text
+
+# JavaScript files
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+
+# CSS files
+*.css text
+*.scss text
+*.sass text
+
+# HTML files
+*.html text
+*.htm text
+
+# JSON files
+*.json text
+
+# YAML files
+*.yml text
+*.yaml text
+
+# Image files (binary)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.webp binary
+
+# Font files
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# Archive files
+*.zip binary
+*.tar binary
+*.gz binary
