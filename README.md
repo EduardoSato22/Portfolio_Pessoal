@@ -1,227 +1,146 @@
-# 🚀 Portfólio Profissional - Eduardo Sato
+# Portfólio Eduardo Sato - React
 
-Portfólio pessoal moderno e responsivo desenvolvido com HTML5, CSS3 e JavaScript puro, seguindo as melhores práticas de desenvolvimento web.
+Portfólio profissional moderno e responsivo desenvolvido com React, Vite, Tailwind CSS e Framer Motion.
+
+## 🚀 Características
+
+- **React 18** com hooks modernos
+- **Vite** para build rápido e otimizado
+- **Tailwind CSS** para estilização
+- **Framer Motion** para animações suaves
+- **React Router** para navegação
+- **Lucide React** para ícones
+- **Tema claro/escuro** com persistência no localStorage
+- **Formulário de contato** com validação
+- **Currículo interativo** com Canvas embed
+- **40+ certificações** organizadas
+- **Totalmente responsivo**
 
 ## 📁 Estrutura do Projeto
 
 ```
-Meu Portifolio/
-├── index.html              # Página principal do portfólio
-├── curriculo.html          # Página do currículo interativo
-├── styles.css              # Estilos customizados
-├── script.js               # Funcionalidades JavaScript
-├── public/                 # Arquivos estáticos
-│   ├── Certificados/       # PDFs dos certificados
-│   ├── Minha_foto.jpeg     # Foto do perfil
-│   └── Curriculo_Eduardo_Sato.pdf
-├── dist/                   # Build de produção (gerado automaticamente)
-├── package.json            # Configurações do projeto
-├── tailwind.config.js      # Configuração do Tailwind CSS
-├── vite.config.js          # Configuração do Vite
-└── README.md               # Este arquivo
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── Navigation.jsx   # Navegação principal
+│   ├── Footer.jsx       # Rodapé
+│   ├── Hero.jsx         # Seção hero
+│   ├── Projects.jsx     # Seção de projetos
+│   ├── About.jsx        # Seção sobre
+│   ├── Experience.jsx   # Experiência profissional
+│   ├── Education.jsx    # Formação e certificações
+│   ├── Skills.jsx       # Habilidades
+│   ├── Contact.jsx      # Formulário de contato
+│   └── ThemeToggle.jsx  # Toggle de tema
+├── pages/               # Páginas
+│   ├── Home.jsx         # Página inicial
+│   └── Curriculum.jsx   # Página do currículo
+├── hooks/               # Hooks personalizados
+│   └── useTheme.js      # Hook para gerenciar tema
+├── App.jsx              # Componente principal
+├── main.jsx             # Ponto de entrada
+└── index.css            # Estilos globais
 ```
 
-## 🎯 Características
+## 🛠️ Scripts Disponíveis
 
-### ✨ **Design Moderno**
+- `npm run dev` - Inicia servidor de desenvolvimento
+- `npm run build` - Gera build de produção
+- `npm run preview` - Visualiza build de produção
+- `npm run lint` - Executa linter
+- `npm run format` - Formata código com Prettier
 
-- **Tema escuro** com gradiente radial sutil
-- **Tipografia Inter** para melhor legibilidade
-- **Ícones Lucide** para interface intuitiva
-- **Animações suaves** e transições elegantes
-- **Design responsivo** para todos os dispositivos
+## 🚀 Deploy na Vercel
 
-### 🛠️ **Tecnologias Utilizadas**
+### Opção 1: Deploy Automático via GitHub
 
-- **HTML5** semântico e acessível
-- **CSS3** com variáveis customizadas
-- **JavaScript ES6+** modular e organizado
-- **Tailwind CSS** via CDN para estilização rápida
-- **Lucide Icons** para ícones modernos
+1. Faça push do código para um repositório GitHub
+2. Conecte o repositório na Vercel
+3. A Vercel detectará automaticamente que é um projeto Vite
+4. O deploy será feito automaticamente
 
-### 📱 **Funcionalidades**
+### Opção 2: Deploy via Vercel CLI
 
-#### **Navegação**
+1. Instale a Vercel CLI:
+```bash
+npm i -g vercel
+```
 
-- Menu responsivo com toggle mobile
-- Scroll suave entre seções
-- Navegação por teclado (acessibilidade)
+2. Faça login na Vercel:
+```bash
+vercel login
+```
 
-#### **Seções do Portfólio**
+3. Deploy do projeto:
+```bash
+vercel
+```
 
-- **Hero**: Apresentação pessoal e call-to-action
-- **Projetos**: Showcase com previews interativos via iframe
-- **Sobre**: Informações pessoais e localização
-- **Experiência**: Timeline profissional
-- **Formação**: Educação e certificações
-- **Habilidades**: Competências técnicas com barras de progresso
-- **Contato**: Formulário funcional com validação
+### Configurações da Vercel
 
-#### **Currículo Interativo**
+O projeto já está configurado com:
+- **Framework**: Vite
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm ci`
 
-- **Embed do Canva** com controles de zoom
-- **Botão de tela cheia** para melhor visualização
-- **Download do PDF** direto
-- **Navegação responsiva** no documento
+## 📋 Pré-requisitos
 
-#### **Certificações**
+- Node.js 16+ 
+- npm 8+
 
-- **28 certificações** organizadas por categoria
-- **Botão "Ver Todas"** para expandir lista
-- **Links diretos** para visualização dos PDFs
-- **Ícones coloridos** para categorização visual
+## 🔧 Instalação
 
-## 🚀 Como Usar
+1. Clone o repositório:
+```bash
+git clone <url-do-repositorio>
+cd Portfolio_Pessoal
+```
 
-### **Desenvolvimento Local**
+2. Instale as dependências:
+```bash
+npm install
+```
 
-1. Clone o repositório
-2. Abra `index.html` em qualquer navegador moderno
-3. Para desenvolvimento com hot-reload, use:
-   ```bash
-   npm run dev
-   ```
-
-### **Produção**
-
-1. Execute o build:
-   ```bash
-   npm run build
-   ```
-2. Os arquivos otimizados estarão na pasta `dist/`
-
-## 📋 Estrutura de Arquivos
-
-### **index.html**
-
-- Página principal do portfólio
-- Estrutura semântica HTML5
-- Links para seções internas
-- Formulário de contato funcional
-
-### **curriculo.html**
-
-- Página dedicada ao currículo
-- Embed interativo do Canva
-- Controles de zoom e navegação
-- Link para download do PDF
-
-### **styles.css**
-
-- Estilos customizados organizados por seção
-- Variáveis CSS para consistência
-- Animações e transições
-- Media queries para responsividade
-- Estilos para acessibilidade
-
-### **script.js**
-
-- Funcionalidades JavaScript modulares
-- Event listeners organizados
-- Validação de formulários
-- Controles do currículo interativo
-- Utilitários e helpers
+3. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
 
 ## 🎨 Personalização
 
-### **Cores**
+### Tema
+O projeto suporta tema claro e escuro. O tema é persistido no localStorage e pode ser alterado pelo botão na navegação.
 
-As cores principais estão definidas no Tailwind CSS:
+### Cores
+As cores principais podem ser alteradas no arquivo `tailwind.config.js` e `src/index.css`.
 
-- **Primária**: `sky-400` (#0ea5e9)
-- **Fundo**: `gray-900` (#111827)
-- **Texto**: `gray-200` (#e5e7eb)
-
-### **Conteúdo**
-
-1. **Informações pessoais**: Edite diretamente no HTML
-2. **Projetos**: Adicione/remova na seção correspondente
-3. **Certificações**: Adicione PDFs na pasta `public/Certificados/`
-4. **Experiências**: Atualize a timeline profissional
-
-### **Estilos**
-
-- **CSS customizado**: Edite `styles.css`
-- **Classes Tailwind**: Use as classes do Tailwind para ajustes rápidos
-- **Responsividade**: Ajuste os breakpoints conforme necessário
+### Conteúdo
+- **Projetos**: Edite o array `projects` em `src/components/Projects.jsx`
+- **Experiência**: Edite o array `experiences` em `src/components/Experience.jsx`
+- **Certificações**: Edite o array `certifications` em `src/components/Education.jsx`
+- **Habilidades**: Edite o array `skills` em `src/components/Skills.jsx`
 
 ## 📱 Responsividade
 
-O portfólio é totalmente responsivo com breakpoints:
+O projeto é totalmente responsivo e funciona em:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (até 767px)
 
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
+## 🔍 SEO
 
-## ♿ Acessibilidade
-
-- **Navegação por teclado** implementada
-- **Contraste adequado** para leitura
-- **Alt texts** em todas as imagens
-- **Estrutura semântica** HTML5
-- **Focus management** para elementos interativos
-
-## 🔧 Manutenção
-
-### **Adicionar Nova Certificação**
-
-1. Adicione o PDF na pasta `public/Certificados/`
-2. Adicione o card na seção de certificações do HTML
-3. Use a classe `data-cert="extra"` para aparecer no "Ver Todas"
-
-### **Adicionar Novo Projeto**
-
-1. Adicione o card na seção de projetos
-2. Configure o iframe com a URL do projeto
-3. Ajuste o título, descrição e tecnologias
-
-### **Atualizar Informações Pessoais**
-
-1. Edite diretamente no HTML
-2. Atualize a foto em `public/Minha_foto.jpeg`
-3. Mantenha a consistência entre as páginas
-
-## 📈 Performance
-
-- **CSS e JS externos** para melhor cache
-- **Lazy loading** para imagens
-- **Minificação** automática no build
-- **CDN** para bibliotecas externas
-- **Otimização** de imagens
-
-## 🌐 Deploy
-
-### **Vercel (Recomendado)**
-
-1. Conecte o repositório ao Vercel
-2. Configure o build command: `npm run build`
-3. Configure o output directory: `dist`
-4. Deploy automático a cada push
-
-### **Netlify**
-
-1. Conecte o repositório ao Netlify
-2. Configure o build command: `npm run build`
-3. Configure o publish directory: `dist`
-
-### **GitHub Pages**
-
-1. Ative GitHub Pages no repositório
-2. Configure a branch `gh-pages`
-3. Use a pasta `dist` como source
-
-## 📞 Suporte
-
-Para dúvidas ou sugestões:
-
-- **Email**: contato@eduardosato.com
-- **LinkedIn**: [Eduardo Sato](https://www.linkedin.com/in/esato-)
-- **GitHub**: [EduardoSato22](https://github.com/EduardoSato22)
+- Meta tags otimizadas
+- Estrutura semântica HTML
+- Alt text em imagens
+- URLs amigáveis
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+MIT License - veja o arquivo LICENSE para detalhes.
 
----
+## 👨‍💻 Autor
 
-**Desenvolvido com ❤️ por Eduardo Sato**
+**Eduardo Sato**
+- LinkedIn: [linkedin.com/in/edsato](https://www.linkedin.com/in/edsato)
+- GitHub: [github.com/EduardoSato22](https://github.com/EduardoSato22)
+- Email: contato@eduardosato.com
