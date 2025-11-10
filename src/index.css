@@ -74,8 +74,8 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Background com gradiente radial - Tema Escuro */
-.gradient-bg {
+/* Background com gradiente radial - Tema Escuro (padrão quando html tem classe dark) */
+html.dark .gradient-bg {
   background-color: #111827;
   background-image: radial-gradient(
     circle at 1px 1px,
@@ -85,12 +85,23 @@ body {
   background-size: 2rem 2rem;
 }
 
-/* Background com gradiente radial - Tema Claro */
-.light .gradient-bg {
+/* Background com gradiente radial - Tema Claro (quando html não tem classe dark) */
+html:not(.dark) .gradient-bg {
   background-color: #f8fafc;
   background-image: radial-gradient(
     circle at 1px 1px,
     #e2e8f0 1px,
+    transparent 0
+  );
+  background-size: 2rem 2rem;
+}
+
+/* Fallback para quando não há classe dark definida ainda */
+.gradient-bg {
+  background-color: #111827;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    #374151 1px,
     transparent 0
   );
   background-size: 2rem 2rem;

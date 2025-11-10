@@ -21,7 +21,7 @@ const Home = () => {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="w-32 h-32 sm:w-40 sm:h-40 mx-auto bg-gray-800 border-4 border-sky-500 rounded-full flex items-center justify-center mb-4 shadow-lg overflow-hidden"
+          className="w-32 h-32 sm:w-40 sm:h-40 mx-auto bg-gray-200 dark:bg-gray-800 border-4 border-sky-500 rounded-full flex items-center justify-center mb-4 shadow-lg overflow-hidden"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -34,7 +34,7 @@ const Home = () => {
         </motion.div>
         
         <motion.h1
-          className="text-4xl sm:text-5xl font-bold text-white tracking-tight"
+          className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -52,7 +52,7 @@ const Home = () => {
         </motion.h2>
         
         <motion.p
-          className="mt-4 max-w-2xl mx-auto text-gray-400"
+          className="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}

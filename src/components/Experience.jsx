@@ -41,15 +41,15 @@ const Experience = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-white mb-8">
+      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Experiência Profissional
       </h3>
-      <div className="w-full max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-2xl p-8">
+      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
-              className={`border-l-4 pl-6 ${exp.isCurrent ? 'border-sky-500' : 'border-gray-600'}`}
+              className={`border-l-4 pl-6 ${exp.isCurrent ? 'border-sky-500' : 'border-gray-300 dark:border-gray-600'}`}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -57,19 +57,19 @@ const Experience = () => {
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
                 <div>
-                  <h4 className="text-xl font-bold text-white">
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                     {exp.title}
                   </h4>
                   <p className="text-sky-400 font-medium">
                     {exp.company}
                   </p>
                 </div>
-                <div className="text-sm text-gray-400 mt-1 md:mt-0">
+                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-0">
                   <div>{exp.period}</div>
                   {exp.location && <div>{exp.location}</div>}
                 </div>
               </div>
-              <p className="text-gray-300">
+              <p className="text-gray-700 dark:text-gray-300">
                 {exp.description}
               </p>
               {exp.isCurrent && (

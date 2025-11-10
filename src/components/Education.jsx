@@ -220,17 +220,17 @@ const Education = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-white mb-8">
+      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Formação e Certificações
       </h3>
-      <div className="w-full max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-2xl p-8">
+      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
         <div className="mb-8">
-          <h4 className="text-2xl font-semibold text-white mb-6">
+          <h4 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Formação Acadêmica
           </h4>
           <div className="grid md:grid-cols-2 gap-6">
             <motion.div
-              className="bg-gray-700 rounded-lg p-6 hover-lift"
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
@@ -238,20 +238,20 @@ const Education = () => {
             >
               <div className="flex items-center mb-4">
                 <GraduationCap className="w-6 h-6 text-sky-400 mr-3" />
-                <h5 className="text-lg font-semibold text-white">
+                <h5 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Ensino Superior
                 </h5>
               </div>
-              <h6 className="font-semibold text-white mb-2">
+              <h6 className="font-semibold text-gray-900 dark:text-white mb-2">
                 Unilavras Centro Universitário
               </h6>
-              <p className="text-gray-300">
+              <p className="text-gray-700 dark:text-gray-300">
                 Análise e Desenvolvimento de Sistemas
               </p>
             </motion.div>
             
             <motion.div
-              className="bg-gray-700 rounded-lg p-6 hover-lift"
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -259,12 +259,12 @@ const Education = () => {
             >
               <div className="flex items-center mb-4">
                 <Award className="w-6 h-6 text-sky-400 mr-3" />
-                <h5 className="text-lg font-semibold text-white">
+                <h5 className="text-lg font-semibold text-gray-900 dark:text-white">
                   Curso Técnico
                 </h5>
               </div>
-              <h6 className="font-semibold text-white mb-2">Microcamp</h6>
-              <p className="text-gray-300">
+              <h6 className="font-semibold text-gray-900 dark:text-white mb-2">Microcamp</h6>
+              <p className="text-gray-700 dark:text-gray-300">
                 Curso Técnico - Hardware e Robótica
               </p>
             </motion.div>
@@ -273,7 +273,7 @@ const Education = () => {
 
         <div>
           <div className="flex items-center justify-between mb-6">
-            <h4 className="text-2xl font-semibold text-white">
+            <h4 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Certificações Principais
             </h4>
             <button
@@ -289,7 +289,7 @@ const Education = () => {
             {visibleCertifications.map((cert, index) => (
               <motion.div
                 key={cert.id}
-                className="bg-gray-700 rounded-lg p-4 hover-lift"
+                className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 hover-lift border border-gray-200 dark:border-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.6 }}
@@ -300,12 +300,12 @@ const Education = () => {
                     <cert.icon size={16} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h5 className="font-medium text-sm text-white mb-1">
+                    <h5 className="font-medium text-sm text-gray-900 dark:text-white mb-1">
                       {cert.title}
                     </h5>
-                    <p className="text-xs text-gray-300 mb-2">{cert.institution}</p>
+                    <p className="text-xs text-gray-700 dark:text-gray-300 mb-2">{cert.institution}</p>
                     <div className="flex items-center justify-between text-xs">
-                      <span className="text-gray-400 flex items-center">
+                      <span className="text-gray-600 dark:text-gray-400 flex items-center">
                         <Calendar size={12} className="mr-1" />
                         {cert.year}
                       </span>

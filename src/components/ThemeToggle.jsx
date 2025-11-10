@@ -1,39 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Sun, Moon } from 'lucide-react'
+import { useTheme } from '../contexts/ThemeContext'
 
 const ThemeToggle = ({ className = '' }) => {
-  const [theme, setTheme] = React.useState('dark')
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-    
-    // Aplicar tema ao documento
-    const root = document.documentElement
-    if (newTheme === 'dark') {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
-    
-    // Salvar tema no localStorage
-    localStorage.setItem('theme', newTheme)
-  }
-
-  React.useEffect(() => {
-    // Carregar tema salvo
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setTheme(savedTheme)
-      const root = document.documentElement
-      if (savedTheme === 'dark') {
-        root.classList.add('dark')
-      } else {
-        root.classList.remove('dark')
-      }
-    }
-  }, [])
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <motion.button
@@ -55,3 +26,4 @@ const ThemeToggle = ({ className = '' }) => {
 }
 
 export default ThemeToggle
+

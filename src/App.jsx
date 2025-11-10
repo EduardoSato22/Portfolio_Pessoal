@@ -1,14 +1,17 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
 import Curriculum from './pages/Curriculum'
 import Footer from './components/Footer'
 
-function App() {
+function AppContent() {
+  const { theme } = useTheme()
+
   return (
     <Router>
-      <div className="gradient-bg text-gray-200 antialiased smooth-scroll">
+      <div className={`gradient-bg text-gray-200 antialiased smooth-scroll ${theme === 'light' ? 'light' : ''}`}>
         <Navigation />
         <main>
           <Routes>
@@ -22,4 +25,13 @@ function App() {
   )
 }
 
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  )
+}
+
 export default App
+

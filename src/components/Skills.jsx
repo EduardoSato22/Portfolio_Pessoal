@@ -23,10 +23,10 @@ const Skills = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-white mb-8">
+      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Habilidades e Competências
       </h3>
-      <div className="w-full max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-2xl p-8">
+      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <motion.div
@@ -38,10 +38,10 @@ const Skills = () => {
               viewport={{ once: true }}
             >
               <div className="flex justify-between items-center">
-                <span className="font-medium text-white">{skill.name}</span>
-                <span className="text-sm text-gray-400">{skill.percentage}%</span>
+                <span className="font-medium text-gray-900 dark:text-white">{skill.name}</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{skill.percentage}%</span>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-2.5">
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                 <motion.div
                   className="bg-sky-400 h-2.5 rounded-full"
                   initial={{ width: 0 }}

@@ -12,7 +12,10 @@ const Projects = () => {
       previewUrl: "https://backend-api-rest-full-cache-jwt.vercel.app/",
       githubUrl: "https://github.com/EduardoSato22/Backend_API_RestFull_Cache_JWT",
       icon: Server,
-      color: "blue"
+      color: "blue",
+      // Para adicionar sua imagem real, coloque o arquivo em public/images/ e use:
+      // image: "/images/api-rest-cache-jwt.jpg"
+      image: "/images/api-rest-cache-jwt.jpg" // Use null para manter a imagem fictícia, ou adicione o caminho da sua imagem
     },
     {
       id: 2,
@@ -22,7 +25,10 @@ const Projects = () => {
       previewUrl: "https://cepapicorreios.vercel.app/",
       githubUrl: "https://github.com/EduardoSato22/CEP_API_Correios",
       icon: MapPin,
-      color: "blue"
+      color: "blue",
+      // Para adicionar sua imagem real, coloque o arquivo em public/images/ e use:
+      // image: "/images/cep-api-correios.jpg"
+      image: "/images/cep-api-correios.jpg" // Use null para manter a imagem fictícia, ou adicione o caminho da sua imagem
     },
     {
       id: 3,
@@ -32,7 +38,10 @@ const Projects = () => {
       previewUrl: "https://api-pokemon-taupe.vercel.app/",
       githubUrl: "https://github.com/EduardoSato22/Api_Pokemon",
       icon: Zap,
-      color: "blue"
+      color: "blue",
+      // Para adicionar sua imagem real, coloque o arquivo em public/images/ e use:
+      // image: "/images/api-pokemon.jpg"
+      image: "/images/api-pokemon.jpg" // Use null para manter a imagem fictícia, ou adicione o caminho da sua imagem
     }
   ]
 
@@ -45,11 +54,11 @@ const Projects = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-white mb-8">
+      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Meus Projetos
       </h3>
-      <div className="w-full max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-2xl p-8">
-        <p className="text-lg text-gray-300 mb-8 text-center">
+      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 text-center">
           Uma seleção dos projetos que desenvolvi, demonstrando minhas
           habilidades técnicas e criatividade.
         </p>
@@ -58,7 +67,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="bg-gray-700 rounded-lg p-6 hover-lift"
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -66,23 +75,23 @@ const Projects = () => {
             >
               <div className="flex items-center mb-4">
                 <project.icon className="w-6 h-6 text-sky-400 mr-3" />
-                <h4 className="text-xl font-bold text-white">
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                   {project.title}
                 </h4>
               </div>
               
               <div className="mb-4">
-                <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop: '56.25%' }}>
-                  <iframe
-                    src={project.previewUrl}
-                    title={`Preview ${project.title}`}
-                    className="absolute inset-0 w-full h-full border-0"
+                <div className="relative w-full overflow-hidden rounded-lg bg-gray-300 dark:bg-gray-600" style={{ paddingTop: '56.25%' }}>
+                  <img
+                    src={project.image || `https://picsum.photos/seed/${project.id}/800/450`}
+                    alt={`Preview do projeto ${project.title}`}
+                    className="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 {project.description}
               </p>
               

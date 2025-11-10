@@ -97,11 +97,11 @@ const Contact = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-white mb-8">
+      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Entre em Contato
       </h3>
-      <div className="w-full max-w-3xl mx-auto bg-gray-800 rounded-xl shadow-2xl p-8">
-        <p className="text-lg text-gray-300 mb-8 text-center">
+      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 text-center">
           Estou sempre aberto a novas oportunidades e colaborações. Vamos
           conversar sobre como posso contribuir para o seu projeto!
         </p>
@@ -109,7 +109,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <motion.div
-              className="bg-gray-700 rounded-lg p-6"
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
@@ -120,14 +120,14 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-sky-400" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Localização</h4>
-                  <p className="text-gray-300">Lavras, Minas Gerais, Brasil</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">Localização</h4>
+                  <p className="text-gray-700 dark:text-gray-300">Lavras, Minas Gerais, Brasil</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="bg-gray-700 rounded-lg p-6"
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -138,7 +138,7 @@ const Contact = () => {
                   <Linkedin className="w-6 h-6 text-sky-400" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">LinkedIn</h4>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">LinkedIn</h4>
                   <a
                     href="https://www.linkedin.com/in/edsato"
                     target="_blank"
@@ -153,7 +153,7 @@ const Contact = () => {
             </motion.div>
 
             <motion.div
-              className="bg-gray-700 rounded-lg p-6"
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -164,7 +164,7 @@ const Contact = () => {
                   <Github className="w-6 h-6 text-sky-400" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">GitHub</h4>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">GitHub</h4>
                   <a
                     href="https://github.com/EduardoSato22"
                     target="_blank"
@@ -180,16 +180,16 @@ const Contact = () => {
           </div>
 
           <motion.div
-            className="bg-gray-700 rounded-lg p-6"
+            className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-transparent"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-xl font-bold text-white mb-4">
+            <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
               Envie uma Mensagem
             </h4>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
               Preencha o formulário abaixo e entrarei em contato em breve.
             </p>
 
@@ -197,7 +197,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-200 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                 >
                   Nome
                 </label>
@@ -208,8 +208,8 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className={`w-full px-3 py-2 bg-gray-800 border text-white rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 ${
-                    errors.name ? 'border-red-500' : 'border-gray-600'
+                  className={`w-full px-3 py-2 bg-white dark:bg-gray-800 border text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 ${
+                    errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                   }`}
                   placeholder="Seu nome"
                 />
@@ -221,7 +221,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-200 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                 >
                   Email
                 </label>
@@ -232,8 +232,8 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className={`w-full px-3 py-2 bg-gray-800 border text-white rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 ${
-                    errors.email ? 'border-red-500' : 'border-gray-600'
+                  className={`w-full px-3 py-2 bg-white dark:bg-gray-800 border text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 ${
+                    errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                   }`}
                   placeholder="seu@email.com"
                 />
@@ -245,7 +245,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-200 mb-1"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                 >
                   Mensagem
                 </label>
@@ -256,8 +256,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className={`w-full px-3 py-2 bg-gray-800 border text-white rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 ${
-                    errors.message ? 'border-red-500' : 'border-gray-600'
+                  className={`w-full px-3 py-2 bg-white dark:bg-gray-800 border text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 ${
+                    errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                   }`}
                   placeholder="Sua mensagem..."
                 />
