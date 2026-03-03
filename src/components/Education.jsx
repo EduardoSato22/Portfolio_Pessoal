@@ -11,179 +11,197 @@ const Education = () => {
   const [showAllCertifications, setShowAllCertifications] = useState(false)
 
   const certifications = [
-    // --- CERTIFICAÇÕES PRINCIPAIS (VISÍVEIS POR PADRÃO) ---
+    // --- CERTIFICAÇÕES TÉCNICAS (DESTAQUE) ---
     {
       id: 1,
-      title: "Crie um site simples usando HTML, CSS e Javascript",
-      institution: "Fundação Bradesco",
-      year: "2024",
-      icon: FileCode,
-      color: "pink",
-      file: "/Certificados/Certificado Bradesco.pdf"
+      category: 'Tecnologia e Desenvolvimento',
+      title: 'AI-900: Fundamentos de IA no Azure',
+      institution: 'Fundação Bradesco / Microsoft',
+      year: '2025',
+      icon: Cloud,
+      color: 'blue',
+      file: '/Certificados/Certificado IA-900 Microsoft.pdf'
     },
     {
       id: 2,
-      title: "Python Fundamental 1",
-      institution: "IFSC",
-      year: "2024",
+      category: 'Tecnologia e Desenvolvimento',
+      title: 'Python Fundamental 1',
+      institution: 'IFSC',
+      year: '2024',
       icon: Code,
-      color: "yellow",
-      file: "/Certificados/Python Fundamental 1.pdf"
+      color: 'yellow',
+      file: '/Certificados/Python Fundamental 1.pdf'
     },
     {
       id: 3,
-      title: "Projeto de Sistemas Web",
-      institution: "IFRS",
-      year: "2024",
+      category: 'Tecnologia e Desenvolvimento',
+      title: 'Projeto de Sistemas Web',
+      institution: 'IFRS',
+      year: '2024',
       icon: Layout,
-      color: "indigo",
-      file: "/Certificados/Projeto de Sistemas Web.pdf"
+      color: 'indigo',
+      file: '/Certificados/Projeto de Sistemas Web.pdf'
     },
     {
       id: 4,
-      title: "Lógica de Programação com JavaScript",
-      institution: "Alura",
-      year: "2024",
-      icon: Code,
-      color: "yellow",
-      file: "/Certificados/Curso Lógica de programação_ mergulhe em programação com JavaScript.pdf"
+      category: 'Tecnologia e Desenvolvimento',
+      title: 'Crie um site simples usando HTML, CSS e Javascript',
+      institution: 'Fundação Bradesco',
+      year: '2024',
+      icon: FileCode,
+      color: 'pink',
+      file: '/Certificados/Certificado Bradesco.pdf'
     },
     {
       id: 5,
-      title: "AI-900: Fundamentos de IA no Azure",
-      institution: "Fundação Bradesco",
-      year: "2025",
-      icon: Cloud,
-      color: "blue",
-      file: "/Certificados/Certificado IA-900 Microsoft.pdf"
+      category: 'Tecnologia e Desenvolvimento',
+      title: 'Lógica de Programação com JavaScript',
+      institution: 'Alura',
+      year: '2024',
+      icon: Code,
+      color: 'yellow',
+      file: '/Certificados/Curso Lógica de programação_ mergulhe em programação com JavaScript.pdf'
     },
     {
       id: 6,
-      title: "Curso Windows Server",
-      institution: "Alura",
-      year: "2024",
+      category: 'Infraestrutura e Redes',
+      title: 'Curso Windows Server',
+      institution: 'Alura',
+      year: '2024',
       icon: Server,
-      color: "blue",
-      file: "/Certificados/Eduardo Henrique Silva Sato - Curso Windows Server - Alura.pdf"
+      color: 'blue',
+      file: '/Certificados/Eduardo Henrique Silva Sato - Curso Windows Server - Alura.pdf'
     },
     {
       id: 7,
-      title: "Introdução ao Pentest na Prática",
-      institution: "Solyd",
-      year: "2024",
-      icon: Shield,
-      color: "red",
-      file: "/Certificados/certificado-introducao-pentest.pdf"
+      category: 'Infraestrutura e Redes',
+      title: 'Cabeamento Estruturado em Redes',
+      institution: 'UNILAVRAS',
+      year: '2024',
+      icon: Network,
+      color: 'green',
+      file: '/Certificados/Cabeamento Estruturado em Redes de Computadores (UNILAVRAS) .pdf'
     },
     {
       id: 8,
-      title: "Cabeamento Estruturado em Redes",
-      institution: "UNILAVRAS",
-      year: "2024",
-      icon: Network,
-      color: "green",
-      file: "/Certificados/Cabeamento Estruturado em Redes de Computadores (UNILAVRAS) .pdf"
+      category: 'Segurança da Informação',
+      title: 'Introdução ao Pentest na Prática',
+      institution: 'Solyd',
+      year: '2024',
+      icon: Shield,
+      color: 'red',
+      file: '/Certificados/certificado-introducao-pentest.pdf'
     },
-    
+
     // --- CERTIFICAÇÕES ADICIONAIS (OCULTAS INICIALMENTE) ---
     {
       id: 9,
-      title: "Análise de Negócios em Soluções de Dados",
-      institution: "Enap",
-      year: "2025",
+      category: 'Dados e Negócios',
+      title: 'Análise de Negócios em Soluções de Dados',
+      institution: 'Enap',
+      year: '2025',
       icon: BarChart2,
-      color: "teal",
-      file: "/Certificados/Certificado analise_de_negocios_no_desenvolvimento_de_solucoes_baseadas_em_dados.pdf",
+      color: 'teal',
+      file: '/Certificados/Certificado analise_de_negocios_no_desenvolvimento_de_solucoes_baseadas_em_dados.pdf',
       isExtra: true
     },
     {
       id: 10,
-      title: "Automação de Sistemas",
-      institution: "IFRS",
-      year: "2024",
+      category: 'Automação e Processos',
+      title: 'Automação de Sistemas',
+      institution: 'IFRS',
+      year: '2024',
       icon: Cog,
-      color: "purple",
-      file: "/Certificados/Automação de Sistemas.pdf",
+      color: 'purple',
+      file: '/Certificados/Automação de Sistemas.pdf',
       isExtra: true
     },
     {
       id: 11,
-      title: "Palestra - IA para Todos",
-      institution: "UNILAVRAS",
-      year: "2023",
+      category: 'Tecnologia e Inovação',
+      title: 'Palestra - IA para Todos',
+      institution: 'UNILAVRAS',
+      year: '2023',
       icon: BrainCircuit,
-      color: "gray",
-      file: "/Certificados/Palestra - IA para Todos.pdf",
+      color: 'gray',
+      file: '/Certificados/Palestra - IA para Todos.pdf',
       isExtra: true
     },
     {
       id: 12,
-      title: "Comunicação Empresarial",
-      institution: "IFRS",
-      year: "2024",
+      category: 'Comunicação e Negócios',
+      title: 'Comunicação Empresarial',
+      institution: 'IFRS',
+      year: '2024',
       icon: MessageSquare,
-      color: "green",
-      file: "/Certificados/Comunicação Empresarial.pdf",
+      color: 'green',
+      file: '/Certificados/Comunicação Empresarial.pdf',
       isExtra: true
     },
     {
       id: 13,
-      title: "Inteligência Emocional",
-      institution: "Verde Campo",
-      year: "2024",
+      category: 'Soft Skills',
+      title: 'Inteligência Emocional',
+      institution: 'Verde Campo',
+      year: '2024',
       icon: Brain,
-      color: "pink",
-      file: "/Certificados/Inteligência Emocional.pdf",
+      color: 'pink',
+      file: '/Certificados/Inteligência Emocional.pdf',
       isExtra: true
     },
     {
       id: 14,
-      title: "Bootcamps DIO: Educação e Empregabilidade",
-      institution: "DIO",
-      year: "2023",
+      category: 'Carreira em Tecnologia',
+      title: 'Bootcamps DIO: Educação e Empregabilidade',
+      institution: 'DIO',
+      year: '2023',
       icon: Terminal,
-      color: "gray",
-      file: "/Certificados/BootCamp.pdf",
+      color: 'gray',
+      file: '/Certificados/BootCamp.pdf',
       isExtra: true
     },
     {
       id: 15,
-      title: "Aula Inaugural - Santander Bootcamps",
-      institution: "Santander / DIO",
-      year: "2023",
+      category: 'Carreira em Tecnologia',
+      title: 'Aula Inaugural - Santander Bootcamps',
+      institution: 'Santander / DIO',
+      year: '2023',
       icon: BookOpen,
-      color: "red",
-      file: "/Certificados/Aula Inaugural Santander.pdf",
+      color: 'red',
+      file: '/Certificados/Aula Inaugural Santander.pdf',
       isExtra: true
     },
     {
       id: 16,
-      title: "Prepare-se Para a Jornada (Onboarding)",
-      institution: "DIO",
-      year: "2023",
+      category: 'Carreira em Tecnologia',
+      title: 'Prepare-se Para a Jornada (Onboarding)',
+      institution: 'DIO',
+      year: '2023',
       icon: Rocket,
-      color: "purple",
-      file: "/Certificados/Preparesse Jornada Onboarding.pdf",
+      color: 'purple',
+      file: '/Certificados/Preparesse Jornada Onboarding.pdf',
       isExtra: true
     },
     {
       id: 17,
-      title: "Saúde Mental",
-      institution: "Verde Campo",
-      year: "2025",
+      category: 'Saúde e Bem-estar',
+      title: 'Saúde Mental',
+      institution: 'Verde Campo',
+      year: '2025',
       icon: HeartHandshake,
-      color: "blue",
-      file: "/Certificados/Certificado de participação Saúde Mental.pdf",
+      color: 'blue',
+      file: '/Certificados/Certificado de participação Saúde Mental.pdf',
       isExtra: true
     },
     {
       id: 18,
-      title: "Diversidade, Inclusão e Viés Inconsciente",
-      institution: "Verde Campo",
-      year: "2024",
+      category: 'Diversidade e Inclusão',
+      title: 'Diversidade, Inclusão e Viés Inconsciente',
+      institution: 'Verde Campo',
+      year: '2024',
       icon: Users,
-      color: "teal",
-      file: "/Certificados/Diversidade, Inclusão e Viés Inconsciente.pdf",
+      color: 'teal',
+      file: '/Certificados/Diversidade, Inclusão e Viés Inconsciente.pdf',
       isExtra: true
     }
   ]
@@ -273,9 +291,14 @@ const Education = () => {
 
         <div>
           <div className="flex items-center justify-between mb-6">
-            <h4 className="text-2xl font-semibold text-gray-900 dark:text-white">
-              Certificações Principais
-            </h4>
+            <div>
+              <h4 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                Certificações e Cursos Relevantes
+              </h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Foco em tecnologia, segurança da informação e competências comportamentais que complementam minha atuação.
+              </p>
+            </div>
             <button
               onClick={toggleCertifications}
               className="border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white px-4 py-2 rounded-lg transition-colors inline-flex items-center"

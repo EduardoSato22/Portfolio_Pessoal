@@ -19,15 +19,18 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           <div>
             <p className="text-lg mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
-              Minha abordagem é pautada pela paixão e pelo compromisso com a
-              qualidade. Acredito que a verdadeira excelência vem da
-              combinação de habilidades técnicas e interpessoais.
+              Atuo como desenvolvedor full stack com foco em construir soluções que gerem impacto real para o negócio,
+              unindo uma base sólida de TI, suporte corporativo e desenvolvimento de software.
             </p>
             <p className="text-lg mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
-              Busco constantemente aprimorar ambas para entregar resultados
-              que realmente fazem a diferença. Atualmente trabalho como
-              Analista de Suporte Técnico JR na Laticínios Verde Campo, em
-              Lavras, MG.
+              Trabalho com Java Spring Boot, React, Flutter, automação com Power Automate/N8N e bancos de dados
+              relacionais como PostgreSQL. Minha abordagem combina excelência técnica, comunicação clara e visão de
+              produto para entregar resultados previsíveis e de alta qualidade.
+            </p>
+            <p className="text-lg mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
+              Atualmente atuo como Analista de Suporte Técnico JR na Laticínios Verde Campo, em Lavras (MG), onde
+              conecto a prática de infraestrutura e suporte ao desenvolvimento de soluções que aumentam a eficiência da
+              operação.
             </p>
           </div>
           <div className="space-y-4">

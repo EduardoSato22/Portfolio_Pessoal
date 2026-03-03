@@ -129,12 +129,13 @@ const Curriculum = () => {
                   <RefreshCw size={16} />
                 </button>
                 <a
-                  href="/Curriculo_Eduardo_Sato.pdf"
-                  download
+                  href="https://www.canva.com/design/DAGz140kiGQ/-qnu9Hdqm-w3I5SNaSq0_w/view?utm_content=DAGz140kiGQ&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-sky-500 hover:bg-sky-600 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors inline-flex items-center text-sm sm:text-base"
                 >
                   <Download size={16} className="mr-2" />
-                  <span className="hidden sm:inline">Download PDF</span>
+                  <span className="hidden sm:inline">Baixar PDF Atualizado</span>
                   <span className="sm:hidden">PDF</span>
                 </a>
                 <button
