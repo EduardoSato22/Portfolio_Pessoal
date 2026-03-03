@@ -282,23 +282,6 @@ const Projects = () => {
         Meus Projetos
       </h3>
       <div className="w-full max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-center">
-          Clique em um projeto para ver detalhes, arquitetura e links. Documentação da API RetailFlow disponível via botão Swagger.
-        </p>
-
-        {/* Botão destacado para Swagger (API RetailFlow) */}
-        <div className="mb-8 flex justify-center">
-          <a
-            href={SWAGGER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-lg transition-colors font-medium shadow-md"
-          >
-            <FileJson size={20} />
-            Documentação Swagger – API RetailFlow (Backend)
-          </a>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-6">
           {projectsData.map((project, index) => (
             <motion.div
