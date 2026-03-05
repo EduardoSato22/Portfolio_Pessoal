@@ -19,7 +19,7 @@ const Navigation = () => {
   const handleNavClick = (e, item) => {
     e.preventDefault()
     closeMobileMenu()
-    
+
     if (item.hash) {
       // Se estamos na mesma página, apenas faz scroll
       if (location.pathname === item.href) {
@@ -44,11 +44,9 @@ const Navigation = () => {
   }
 
   const navItems = [
-    { name: 'Início', href: '/', hash: '#home' },
     { name: 'Projetos', href: '/', hash: '#projects' },
     { name: 'Sobre', href: '/', hash: '#about' },
     { name: 'Experiência', href: '/', hash: '#experience' },
-    { name: 'Formação', href: '/', hash: '#education' },
     { name: 'Habilidades', href: '/', hash: '#skills' },
     { name: 'Currículo', href: '/curriculo' },
     { name: 'Contato', href: '/', hash: '#contact' },
@@ -81,6 +79,15 @@ const Navigation = () => {
       }
     }
   }, [location])
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isMobileMenuOpen && !e.target.closest('nav')) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isMobileMenuOpen])
 
   return (
     <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
@@ -89,7 +96,7 @@ const Navigation = () => {
           <Link to="/" className="font-bold text-xl text-gray-900 dark:text-white hover:text-sky-400 transition-colors">
             Eduardo Sato
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -97,11 +104,10 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href + (item.hash || '')}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`transition-colors cursor-pointer ${
-                  isActive(item)
+                className={`transition-colors cursor-pointer ${isActive(item)
                     ? 'text-sky-400 font-medium'
                     : 'text-gray-700 dark:text-gray-300 hover:text-sky-400'
-                }`}
+                  }`}
               >
                 {item.name}
               </a>
@@ -127,11 +133,10 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href + (item.hash || '')}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`transition-colors cursor-pointer ${
-                  isActive(item)
+                className={`transition-colors cursor-pointer ${isActive(item)
                     ? 'text-sky-400 font-medium'
                     : 'text-gray-700 dark:text-gray-300 hover:text-sky-400'
-                }`}
+                  }`}
               >
                 {item.name}
               </a>

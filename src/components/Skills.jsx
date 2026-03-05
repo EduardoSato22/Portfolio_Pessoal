@@ -3,12 +3,14 @@ import { motion } from 'framer-motion'
 
 const Skills = () => {
   const techSkills = [
-    { name: 'Automação de Processos (Power Automate, n8n)', level: 'Avançado', percentage: 95 },
-    { name: 'Python para dados e scripts', level: 'Avançado', percentage: 90 },
-    { name: 'HTML, CSS e boas práticas de UI', level: 'Avançado', percentage: 85 },
-    { name: 'JavaScript / React', level: 'Intermediário', percentage: 75 },
-    { name: 'Integrações com APIs REST', level: 'Intermediário', percentage: 80 },
-    { name: 'Microsoft 365 e produtividade', level: 'Avançado', percentage: 90 }
+    { name: 'Java & Spring Boot', level: 'Intermediário', percentage: 78 },
+    { name: 'React & TypeScript', level: 'Intermediário', percentage: 78 },
+    { name: 'Node.js & Express', level: 'Intermediário', percentage: 74 },
+    { name: 'Flutter & Dart', level: 'Intermediário', percentage: 70 },
+    { name: 'Python (dados e scripts)', level: 'Avançado', percentage: 90 },
+    { name: 'PostgreSQL & Docker', level: 'Intermediário', percentage: 72 },
+    { name: 'Power Automate / n8n', level: 'Avançado', percentage: 95 },
+    { name: 'HTML, CSS & UI', level: 'Avançado', percentage: 85 },
   ]
 
   const softSkills = [
@@ -29,7 +31,7 @@ const Skills = () => {
       viewport={{ once: true }}
     >
       <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-        Habilidades e Perfil para RH
+        Habilidades e Competências
       </h3>
       <div className="w-full max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
         <div className="grid gap-8 lg:grid-cols-2">
@@ -84,9 +86,6 @@ const Skills = () => {
                         {skill.level}
                       </span>
                     </div>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                      {skill.percentage}%
-                    </span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <motion.div

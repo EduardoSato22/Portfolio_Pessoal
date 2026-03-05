@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Briefcase, Linkedin, Github } from 'lucide-react'
+import { MapPin, Briefcase, Linkedin, Github, Mail } from 'lucide-react'
 
 const About = () => {
   return (
@@ -62,6 +62,15 @@ const About = () => {
                 className="text-sky-400 hover:text-sky-300 transition-colors"
               >
                 github.com/EduardoSato22
+              </a>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Mail className="w-5 h-5 text-sky-400" />
+              <a
+                href="mailto:eduardosato22@gmail.com"
+                className="text-sky-400 hover:text-sky-300 transition-colors"
+              >
+                eduardosato22@gmail.com
               </a>
             </div>
           </div>

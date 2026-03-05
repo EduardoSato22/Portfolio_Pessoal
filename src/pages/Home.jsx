@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, FileText } from 'lucide-react'
+import { Mail, FileText, Github } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Projects from '../components/Projects'
 import About from '../components/About'
@@ -11,42 +11,23 @@ import Contact from '../components/Contact'
 
 const ROLE = 'Desenvolvedor FullStack'
 
-function useTypewriter(text, speed = 50, startDelay = 300, pauseAtEnd = 2200) {
+function useTypewriter(text, speed = 25, startDelay = 600) {
   const [display, setDisplay] = useState('')
 
   useEffect(() => {
     if (!text) return
-
     let index = 0
     let timerId = null
-
-    const clearTimer = () => {
-      if (timerId != null) {
-        clearTimeout(timerId)
-        timerId = null
-      }
-    }
-
     const type = () => {
       setDisplay(text.slice(0, index + 1))
       index += 1
       if (index < text.length) {
         timerId = setTimeout(type, speed)
-      } else {
-        timerId = setTimeout(restart, pauseAtEnd)
       }
     }
-
-    const restart = () => {
-      setDisplay('')
-      index = 0
-      timerId = setTimeout(type, speed)
-    }
-
     timerId = setTimeout(type, startDelay)
-
-    return () => clearTimer()
-  }, [text, speed, startDelay, pauseAtEnd])
+    return () => clearTimeout(timerId)
+  }, [text, speed, startDelay])
 
   return display
 }
@@ -102,9 +83,9 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Especialista em desenvolvimento full stack com foco em Java Spring Boot, React, Flutter e bancos de dados
-          relacionais. Transformo requisitos de negócio em soluções robustas, seguras e bem documentadas, prontas para
-          produção.
+          Desenvolvedor Full Stack com foco em Java Spring Boot, React, Flutter e bancos de dados
+          relacionais. Construo sistemas completos — do backend ao mobile — com atenção à segurança,
+          código limpo e documentação.
         </motion.p>
 
         <motion.div
@@ -127,6 +108,15 @@ const Home = () => {
             <FileText size={16} className="mr-2" />
             Ver Currículo
           </Link>
+          <a
+            href="https://github.com/EduardoSato22"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-gray-600 text-gray-400 hover:border-sky-500 hover:text-sky-400 px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
+          >
+            <Github size={16} className="mr-2" />
+            GitHub
+          </a>
         </motion.div>
       </motion.header>
 

@@ -722,6 +722,11 @@ html:not(.dark) .gradient-bg {
   background: #6b7280;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
+
 /* Tema claro - scrollbar */
 .light ::-webkit-scrollbar-track {
   background: #f1f5f9;

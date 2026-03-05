@@ -9,7 +9,7 @@ const Experience = () => {
       company: "Laticínios Verde Campo",
       period: "Abr 2025 - Atual",
       location: "Lavras, MG",
-      description: "Responsável pelo suporte técnico, manutenção de sistemas de TI e gestão de infraestrutura para garantir a continuidade das operações da empresa.",
+      description: "Suporte técnico nível 1 e 2 para aproximadamente 500 usuários. Automação de processos internos com Power Automate e n8n, gestão de Active Directory e Office 365, manutenção de infraestrutura de rede e apoio ao deploy de sistemas ERP.",
       isCurrent: true
     },
     {
@@ -18,7 +18,7 @@ const Experience = () => {
       company: "Laticínios Verde Campo",
       period: "Ago 2024 – Mar 2025",
       location: "Lavras, MG",
-      description: "Suporte técnico a usuários, manutenção de hardware e software, e assistência em projetos de tecnologia da informação.",
+      description: "Atendimento a chamados de hardware e software, inventário de ativos de TI, configuração de estações de trabalho e impressoras, e suporte a usuários em ferramentas Microsoft 365.",
       isCurrent: false
     },
     {
@@ -27,7 +27,7 @@ const Experience = () => {
       company: "Lojas REDE",
       period: "Nov 2022 – Jul 2024",
       location: "",
-      description: "Gestão de estoque, coordenação de equipe e otimização de processos logísticos do depósito.",
+      description: "Liderança de equipe de 4 pessoas, controle de estoque com sistema ERP, organização logística e redução de perdas por inventário. Habilidades de liderança e processos aplicadas hoje na gestão de projetos de TI.",
       isCurrent: false
     }
   ]

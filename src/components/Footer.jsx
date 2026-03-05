@@ -34,7 +34,7 @@ const Footer = () => {
         </a>
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-500">
-        &copy; 2025 Eduardo Sato. Todos os direitos reservados.
+        &copy; 2026 Eduardo Sato. Todos os direitos reservados.
       </p>
     </footer>
   )

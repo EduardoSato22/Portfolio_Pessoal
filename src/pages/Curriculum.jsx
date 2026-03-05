@@ -129,7 +129,7 @@ const Curriculum = () => {
                   <RefreshCw size={16} />
                 </button>
                 <a
-                  href="/curriculo-eduardo-sato.pdf"
+                  href="/Curriculo_Eduardo_Sato.pdf"
                   download="Curriculo_Eduardo_Sato.pdf"
                   className="bg-sky-500 hover:bg-sky-600 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors inline-flex items-center text-sm sm:text-base"
                 >
@@ -173,7 +173,7 @@ const Curriculum = () => {
                 rel="noopener noreferrer"
                 className="text-sky-400 hover:text-sky-300 transition-colors text-sm"
               >
-                Curriculo Analista de Requisitos
+                Currículo — Eduardo Sato
               </a>
               <span className="text-gray-500 text-sm ml-2">de Eduardosato22</span>
             </div>
