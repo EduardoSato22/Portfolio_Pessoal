@@ -8,15 +8,17 @@ const projectsData = [
   {
     id: 1,
     title: 'RetailFlow · CRM de Clientes e Catálogo de Produtos',
-    shortDescription: 'CRM full stack (Frameworks Web II). Backend Spring Boot, frontend React, documentação Swagger, deploy Render + Vercel.',
+    shortDescription:
+      'CRM full stack (Frameworks Web II). Backend Spring Boot, frontend React, documentação Swagger, deploy Render + Vercel.',
     technologies: ['Java 17', 'Spring Boot', 'Spring Security', 'JWT', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     previewUrl: 'https://retailflow-front.vercel.app/',
     githubUrl: 'https://github.com/EduardoSato22?tab=repositories&q=retailflow',
     swaggerUrl: SWAGGER_URL,
     icon: Server,
-    image: null,
+    image: '/images/retailflow-crm.jpg',
     detail: {
-      context: 'Projeto final da disciplina Frameworks Web II (Unilavras). CRM acadêmico completo para gestão de clientes e catálogo de produtos.',
+      context:
+        'Projeto final da disciplina Frameworks Web II (Unilavras). CRM acadêmico completo para gestão de clientes e catálogo de produtos.',
       features: [
         'CRUD completo de clientes e produtos, com relacionamento por usuário',
         'Autenticação e autorização com JWT e Spring Security',
@@ -26,7 +28,8 @@ const projectsData = [
         'Deploy: backend no Render, frontend na Vercel; scripts e Docker Compose para ambiente local',
         'Senhas com BCrypt; tokens JWT com expiração configurável; CORS e variáveis de ambiente para produção',
       ],
-      architecture: 'retailflow/ → backend/ (API REST Java/Spring), frontend/ (SPA React), docker-compose.yml. Endpoints: POST /api/auth/register e /login; GET/POST/PUT/DELETE /api/customers e /api/products (rotas protegidas com Bearer token).',
+      architecture:
+        'retailflow/ → backend/ (API REST Java/Spring), frontend/ (SPA React), docker-compose.yml. Endpoints: POST /api/auth/register e /login; GET/POST/PUT/DELETE /api/customers e /api/products (rotas protegidas com Bearer token).',
       links: [
         { label: 'Aplicação (Frontend)', url: 'https://retailflow-front.vercel.app/' },
         { label: 'Documentação Swagger (API)', url: SWAGGER_URL },
@@ -36,29 +39,30 @@ const projectsData = [
   },
   {
     id: 2,
-    title: 'RetailFlow Mobile · App Flutter',
-    shortDescription: 'Desafio final de Desenvolvimento Mobile II. App Flutter consumindo o backend RetailFlow no Render.',
-    technologies: ['Flutter', 'Dart', 'Provider', 'REST API', 'JWT'],
-    previewUrl: 'https://retailflow-front.vercel.app/',
-    githubUrl: 'https://github.com/EduardoSato22?tab=repositories&q=retailflow',
-    swaggerUrl: SWAGGER_URL,
+    title: 'Doceria Delicatto · Website Responsivo',
+    shortDescription:
+      'Site moderno e responsivo para confeitaria de doces artesanais, com vitrine de produtos e contato via WhatsApp.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Mobile First', 'Vercel'],
+    previewUrl: 'https://doceria-delicatto.vercel.app',
+    githubUrl: 'https://github.com/EduardoSato22/Doceria_Delicatto',
+    swaggerUrl: null,
     icon: Zap,
-    image: null,
+    image: '/images/doceria-delicatto.jpg',
     detail: {
-      context: 'Aplicativo Flutter (mobile/web/desktop) para consumo do backend CRM RetailFlow hospedado no Render, com banco PostgreSQL (Aiven). Atende ao desafio final da disciplina Desenvolvimento Mobile II.',
+      context:
+        'Website desenvolvido para a Doceria Delicatto, destacando doces artesanais, foco em experiência visual agradável e navegação simples para o cliente final.',
       features: [
-        'Arquitetura em camadas: Views → Components → Providers → Services → DAO → Models',
-        'Estado global com Provider; comunicação HTTP com token JWT em shared_preferences',
-        'Internacionalização com intl para valores e datas',
-        'Telas: Login, Dashboard, listas e formulários de clientes e produtos (RefreshIndicator, FAB, validação)',
-        'Drawer global para navegação e logout',
-        'Mesmo contrato da API do backend (auth/login, clientes, produtos)',
+        'Layout moderno com foco em produtos e experiência visual',
+        'Design totalmente responsivo (desktop, tablet e mobile)',
+        'Galeria de produtos com imagens otimizadas',
+        'Seção de contato direcionando pedidos diretamente para o WhatsApp',
+        'Performance otimizada para carregamento rápido no navegador',
       ],
-      architecture: 'lib/main.dart (bootstrap e tema Material 3); config/constants.dart (baseUrl do backend); models, services, providers, views e components. Usuário demo: demo@retailflow.com / demo123.',
+      architecture:
+        'Projeto estático com HTML, CSS e JavaScript. Organização em seções: apresentação, vitrine de produtos e contato. Deploy realizado na Vercel.',
       links: [
-        { label: 'Backend (API)', url: 'http://app-full-stack-crm.onrender.com' },
-        { label: 'Documentação Swagger', url: SWAGGER_URL },
-        { label: 'Repositórios RetailFlow', url: 'https://github.com/EduardoSato22?tab=repositories&q=retailflow' },
+        { label: 'Ver site da Doceria', url: 'https://doceria-delicatto.vercel.app' },
+        { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Doceria_Delicatto' },
       ],
     },
   },
@@ -153,14 +157,14 @@ function ProjectDetailModal({ project, onClose }) {
       onClick={onClose}
     >
       <motion.div
-        className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-gray-200 dark:border-gray-700"
+        className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-2xl sm:max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-gray-200 dark:border-gray-700"
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         transition={{ type: 'spring', damping: 25 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm z-10">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white pr-4">{title}</h3>
           <button
             type="button"
@@ -171,14 +175,18 @@ function ProjectDetailModal({ project, onClose }) {
             <X size={24} />
           </button>
         </div>
-        <div className="w-full flex-shrink-0 h-44 sm:h-52 max-h-[220px] bg-gray-100 dark:bg-gray-700/80 overflow-hidden border-b border-gray-200 dark:border-gray-700">
-          <img
-            src={imageSrc}
-            alt={`Preview do projeto ${title}`}
-            className="w-full h-full object-cover object-top"
-          />
-        </div>
-        <div className="overflow-y-auto flex-1 min-h-0 p-4 sm:p-6 space-y-5">
+        <div className="p-4 sm:p-6 space-y-5">
+          <div className="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700/80 aspect-video border border-gray-300 dark:border-gray-600">
+            <img
+              src={imageSrc}
+              alt={`Preview do projeto ${title}`}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 text-center">
+            Role para ver a descrição completa, recursos e links do projeto.
+          </p>
           {detail.context && (
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{detail.context}</p>
           )}
@@ -302,13 +310,14 @@ const Projects = () => {
                   {project.title}
                 </h4>
               </div>
-              <div className="relative w-full overflow-hidden rounded-lg bg-gray-300 dark:bg-gray-600 mb-4" style={{ paddingTop: '56.25%' }}>
+              <div className="relative w-full overflow-hidden rounded-lg bg-gray-300 dark:bg-gray-600 mb-4 aspect-video group border border-gray-300 dark:border-gray-600">
                 <img
                   src={project.image || `https://picsum.photos/seed/${project.id}/800/450`}
                   alt={`Preview do projeto ${project.title}`}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 line-clamp-3">
                 {project.shortDescription}

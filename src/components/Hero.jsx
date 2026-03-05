@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Mail, FileText } from 'lucide-react'
+import { Mail, FileText, Github } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
@@ -49,9 +49,9 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
       >
-        Acredito que a excelência não é apenas um objetivo, mas uma filosofia
-        de vida. Dedico-me a cada projeto, buscando sempre superar
-        expectativas.
+        Desenvolvedor FullStack com experiência em Java/Spring Boot, React e Flutter.
+        Apaixonado por construir sistemas completos — do backend ao mobile — com foco
+        em clean code, segurança e boas práticas.
       </motion.p>
       
       <motion.div
@@ -74,10 +74,18 @@ const Hero = () => {
           <FileText size={16} className="mr-2" />
           Ver Currículo
         </Link>
+        <a
+          href="https://github.com/EduardoSato22"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border border-gray-600 text-gray-400 hover:border-sky-500 hover:text-sky-400 px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
+        >
+          <Github size={16} className="mr-2" />
+          GitHub
+        </a>
       </motion.div>
     </motion.header>
   )
 }
 
 export default Hero
-

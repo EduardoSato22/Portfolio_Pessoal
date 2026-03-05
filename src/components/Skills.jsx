@@ -2,16 +2,21 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const Skills = () => {
-  const skills = [
-    { name: 'Python', percentage: 90 },
-    { name: 'HTML & CSS', percentage: 85 },
-    { name: 'JavaScript', percentage: 75 },
-    { name: 'Power Automate', percentage: 95 },
-    { name: 'N8N (Automação)', percentage: 90 },
-    { name: 'Hardware e Robótica', percentage: 80 },
-    { name: 'Microsoft Office 365', percentage: 90 },
-    { name: 'Redes de Computadores', percentage: 70 },
-    { name: 'Sistemas Operacionais', percentage: 85 }
+  const techSkills = [
+    { name: 'Automação de Processos (Power Automate, n8n)', level: 'Avançado', percentage: 95 },
+    { name: 'Python para dados e scripts', level: 'Avançado', percentage: 90 },
+    { name: 'HTML, CSS e boas práticas de UI', level: 'Avançado', percentage: 85 },
+    { name: 'JavaScript / React', level: 'Intermediário', percentage: 75 },
+    { name: 'Integrações com APIs REST', level: 'Intermediário', percentage: 80 },
+    { name: 'Microsoft 365 e produtividade', level: 'Avançado', percentage: 90 }
+  ]
+
+  const softSkills = [
+    'Tradução de linguagem técnica para o negócio, facilitando a comunicação com áreas não técnicas',
+    'Visão de processos: foco em ganho de eficiência, padronização e redução de erros manuais',
+    'Perfil colaborativo, acostumado a trabalhar em times multidisciplinares',
+    'Organização e documentação clara de requisitos, fluxos e regras de negócio',
+    'Compromisso com entrega e melhoria contínua, sempre buscando feedback'
   ]
 
   return (
@@ -24,34 +29,78 @@ const Skills = () => {
       viewport={{ once: true }}
     >
       <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-        Habilidades e Competências
+        Habilidades e Perfil para RH
       </h3>
-      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              className="space-y-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex justify-between items-center">
-                <span className="font-medium text-gray-900 dark:text-white">{skill.name}</span>
-                <span className="text-sm text-gray-600 dark:text-gray-400">{skill.percentage}%</span>
-              </div>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+      <div className="w-full max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              Como atuo em projetos
+            </h4>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              Além do código, meu foco está em entender o problema de negócio, organizar informações
+              e entregar soluções que realmente facilitem o dia a dia das pessoas usuárias.
+            </p>
+            <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+              {softSkills.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sky-500 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              Competências técnicas principais
+            </h4>
+            <div className="space-y-4">
+              {techSkills.map((skill, index) => (
                 <motion.div
-                  className="bg-sky-400 h-2.5 rounded-full"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.percentage}%` }}
-                  transition={{ delay: index * 0.1 + 0.3, duration: 0.8 }}
+                  key={skill.name}
+                  className="space-y-1.5"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.08, duration: 0.5 }}
                   viewport={{ once: true }}
-                />
-              </div>
-            </motion.div>
-          ))}
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="font-medium text-gray-900 dark:text-white block">
+                        {skill.name}
+                      </span>
+                      <span className="text-xs text-sky-500 dark:text-sky-300">
+                        {skill.level}
+                      </span>
+                    </div>
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                      {skill.percentage}%
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                    <motion.div
+                      className="bg-sky-400 h-2.5 rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.percentage}%` }}
+                      transition={{ delay: index * 0.08 + 0.2, duration: 0.8 }}
+                      viewport={{ once: true }}
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>
