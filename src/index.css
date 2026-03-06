@@ -72,6 +72,16 @@
 /* Fontes */
 body {
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background-color: #111827;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: clip;
 }
 
 /* Background com gradiente radial - Tema Escuro (padrão quando html tem classe dark) */

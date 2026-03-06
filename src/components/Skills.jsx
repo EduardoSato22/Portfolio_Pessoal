@@ -33,7 +33,7 @@ const Skills = () => {
       <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Habilidades e Competências
       </h3>
-      <div className="w-full max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
+      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 sm:p-8 border border-gray-200 dark:border-transparent">
         <div className="grid gap-8 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -289,7 +289,7 @@ const Projects = () => {
       <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Meus Projetos
       </h3>
-      <div className="w-full max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
+      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 sm:p-8 border border-gray-200 dark:border-transparent">
         <div className="grid md:grid-cols-2 gap-6">
           {projectsData.map((project, index) => (
             <motion.div
