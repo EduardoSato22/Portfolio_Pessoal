@@ -81,6 +81,7 @@ const Contact = () => {
         throw new Error('Falha no envio da rede')
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Erro ao enviar formulário:', error)
       setSubmitStatus('error')
     } finally {

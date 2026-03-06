@@ -24,6 +24,7 @@ const Curriculum = () => {
     
     if (!document.fullscreenElement) {
       containerRef.current.requestFullscreen().catch(err => {
+        // eslint-disable-next-line no-console
         console.error('Erro ao entrar em tela cheia:', err)
       })
     } else {
