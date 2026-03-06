@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
@@ -22,6 +23,7 @@ function AppContent() {
         </main>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </div>
     </Router>
   )
