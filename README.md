@@ -1,5 +1,12 @@
 # Portfólio Eduardo Sato - React
 
+![React](https://img.shields.io/badge/React_18-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-B73CE5?style=flat&logo=vite&logoColor=FFD62E)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js_16+-43853D?style=flat&logo=node.js&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
+
 Portfólio profissional moderno e responsivo desenvolvido com React, Vite, Tailwind CSS e Framer Motion.
 
 ## 🚀 Características
