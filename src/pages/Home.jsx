@@ -148,6 +148,14 @@ const Home = () => {
             Ver Currículo
           </Link>
           <a
+            href="/Curriculo_Eduardo_Sato.pdf"
+            download="Curriculo_Eduardo_Sato.pdf"
+            className="border border-gray-600 text-gray-400 hover:border-sky-500 hover:text-sky-400 px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
+          >
+            <FileText size={16} className="mr-2" />
+            Baixar PDF
+          </a>
+          <a
             href="https://www.linkedin.com/in/edsato"
             target="_blank"
             rel="noopener noreferrer"

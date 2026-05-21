@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Briefcase, Linkedin, Github, Mail, Globe } from 'lucide-react'
+import { MapPin, Briefcase, Linkedin, Github, Mail, Globe, BookOpen } from 'lucide-react'
 
 const About = () => {
   return (
@@ -15,7 +15,8 @@ const About = () => {
       <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Sobre Mim
       </h3>
-      <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
+      <div className="w-full max-w-3xl mx-auto space-y-4">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
         <div className="grid lg:grid-cols-2 gap-8">
           <div>
             <div className="flex flex-wrap gap-2 mb-5">
@@ -100,6 +101,43 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <motion.div
+        className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 border border-violet-500/30 dark:border-violet-500/20"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15, duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <div className="flex items-center gap-2 mb-4">
+          <BookOpen className="w-5 h-5 text-violet-400 flex-shrink-0" />
+          <h4 className="text-base font-semibold text-gray-900 dark:text-white">
+            Atualmente aprendendo
+          </h4>
+          <span className="ml-auto text-xs text-gray-500 dark:text-gray-400">
+            MBA Engenharia de Software · Descomplica
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {[
+            'Arquitetura de Software',
+            'Design Patterns',
+            'Clean Architecture',
+            'Metodologias Ágeis',
+            'Engenharia de Requisitos',
+            'Qualidade & Testes',
+            'Gestão de Projetos de TI',
+          ].map((topic) => (
+            <span
+              key={topic}
+              className="text-xs bg-violet-500/10 text-violet-400 border border-violet-500/20 px-2.5 py-1 rounded-full font-medium"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
+      </motion.div>
       </div>
     </motion.section>
   )

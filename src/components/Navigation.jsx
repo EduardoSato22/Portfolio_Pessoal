@@ -48,6 +48,7 @@ const Navigation = () => {
     { name: 'Sobre', href: '/', hash: '#about' },
     { name: 'Experiência', href: '/', hash: '#experience' },
     { name: 'Habilidades', href: '/', hash: '#skills' },
+    { name: 'Formação', href: '/', hash: '#education' },
     { name: 'Currículo', href: '/curriculo' },
     { name: 'Contato', href: '/', hash: '#contact' },
   ]
