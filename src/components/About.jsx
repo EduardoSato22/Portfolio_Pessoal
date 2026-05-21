@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Briefcase, Linkedin, Github, Mail } from 'lucide-react'
+import { MapPin, Briefcase, Linkedin, Github, Mail, Globe } from 'lucide-react'
 
 const About = () => {
   return (
@@ -18,32 +18,44 @@ const About = () => {
       <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
         <div className="grid lg:grid-cols-2 gap-8">
           <div>
-            <p className="text-lg mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
-              Atuo como desenvolvedor full stack com foco em construir soluções que gerem impacto real para o negócio,
-              unindo uma base sólida de TI, suporte corporativo e desenvolvimento de software.
+            <div className="flex flex-wrap gap-2 mb-5">
+              <span className="inline-flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-medium px-3 py-1 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                Disponível para oportunidades
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-medium px-3 py-1 rounded-full">
+                <Globe size={11} />
+                Aberto a trabalho remoto
+              </span>
+            </div>
+
+            <p className="text-base mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
+              Sou desenvolvedor full stack com foco em construir soluções que gerem impacto real para
+              o negócio — unindo backend sólido em Java/Spring Boot, frontend moderno em React e
+              automação inteligente com Power Automate e n8n.
             </p>
-            <p className="text-lg mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
-              Trabalho com Java Spring Boot, React, Flutter, automação com Power Automate/N8N e bancos de dados
-              relacionais como PostgreSQL. Minha abordagem combina excelência técnica, comunicação clara e visão de
-              produto para entregar resultados previsíveis e de alta qualidade.
+            <p className="text-base mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
+              Atualmente atuo como Analista de Suporte Técnico JR na Laticínios Verde Campo, onde
+              conecto infraestrutura e desenvolvimento: automatizo processos internos, integro sistemas
+              e desenvolvimento soluções que aumentam a eficiência da operação.
             </p>
-            <p className="text-lg mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
-              Atualmente atuo como Analista de Suporte Técnico JR na Laticínios Verde Campo, em Lavras (MG), onde
-              conecto a prática de infraestrutura e suporte ao desenvolvimento de soluções que aumentam a eficiência da
-              operação.
+            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+              Busco uma vaga como desenvolvedor onde possa aplicar e evoluir minhas habilidades em
+              Java, React ou Flutter — presencialmente em Lavras/MG ou remotamente.
             </p>
           </div>
-          <div className="space-y-4">
+
+          <div className="space-y-3">
             <div className="flex items-center space-x-3">
-              <MapPin className="w-5 h-5 text-sky-400" />
+              <MapPin className="w-5 h-5 text-sky-400 flex-shrink-0" />
               <span className="text-gray-700 dark:text-gray-300">Lavras, Minas Gerais, Brasil</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Briefcase className="w-5 h-5 text-sky-400" />
+              <Briefcase className="w-5 h-5 text-sky-400 flex-shrink-0" />
               <span className="text-gray-700 dark:text-gray-300">Laticínios Verde Campo</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Linkedin className="w-5 h-5 text-sky-400" />
+              <Linkedin className="w-5 h-5 text-sky-400 flex-shrink-0" />
               <a
                 href="https://www.linkedin.com/in/edsato"
                 target="_blank"
@@ -54,7 +66,7 @@ const About = () => {
               </a>
             </div>
             <div className="flex items-center space-x-3">
-              <Github className="w-5 h-5 text-sky-400" />
+              <Github className="w-5 h-5 text-sky-400 flex-shrink-0" />
               <a
                 href="https://github.com/EduardoSato22"
                 target="_blank"
@@ -65,13 +77,26 @@ const About = () => {
               </a>
             </div>
             <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-sky-400" />
+              <Mail className="w-5 h-5 text-sky-400 flex-shrink-0" />
               <a
                 href="mailto:eduardosato22@gmail.com"
                 className="text-sky-400 hover:text-sky-300 transition-colors"
               >
                 eduardosato22@gmail.com
               </a>
+            </div>
+
+            <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
+              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide mb-2">
+                Áreas de interesse
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {['Backend Java', 'Frontend React', 'Full Stack', 'Mobile Flutter', 'Automação'].map((tag) => (
+                  <span key={tag} className="text-xs bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2 py-0.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -246,7 +246,7 @@ const Education = () => {
           <h4 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Formação Acadêmica
           </h4>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <motion.div
               className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, y: 20 }}
@@ -267,7 +267,33 @@ const Education = () => {
                 Análise e Desenvolvimento de Sistemas
               </p>
             </motion.div>
-            
+
+            <motion.div
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-sky-500/40 dark:border-sky-500/30 relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <span className="absolute top-3 right-3 inline-flex items-center gap-1 bg-green-500/10 border border-green-500/30 text-green-400 text-[10px] font-medium px-2 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                Em curso
+              </span>
+              <div className="flex items-center mb-4">
+                <GraduationCap className="w-6 h-6 text-sky-400 mr-3" />
+                <h5 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  MBA
+                </h5>
+              </div>
+              <h6 className="font-semibold text-gray-900 dark:text-white mb-2">
+                Descomplica Faculdade Digital
+              </h6>
+              <p className="text-gray-700 dark:text-gray-300">
+                Engenharia de Software
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">2026 – Em andamento</p>
+            </motion.div>
+
             <motion.div
               className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-gray-200 dark:border-transparent"
               initial={{ opacity: 0, y: 20 }}

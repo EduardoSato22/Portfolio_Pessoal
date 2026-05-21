@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, FileText, Github } from 'lucide-react'
+import { Mail, FileText, Github, Linkedin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Projects from '../components/Projects'
 import About from '../components/About'
@@ -9,35 +9,49 @@ import Education from '../components/Education'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 
-const ROLE = 'Desenvolvedor FullStack'
+const ROLES = [
+  'Desenvolvedor Full Stack',
+  'Java · Spring Boot · React',
+  'Automação · Power Automate · n8n',
+]
 
-function useTypewriter(text, speed = 25, startDelay = 600) {
+function useTypewriter(texts, speed = 45, pause = 1800) {
   const [display, setDisplay] = useState('')
+  const [roleIdx, setRoleIdx] = useState(0)
+  const [phase, setPhase] = useState('typing')
 
   useEffect(() => {
-    if (!text) return
-    let index = 0
-    let timerId = null
-    const type = () => {
-      setDisplay(text.slice(0, index + 1))
-      index += 1
-      if (index < text.length) {
-        timerId = setTimeout(type, speed)
+    const current = texts[roleIdx]
+    let timeout
+
+    if (phase === 'typing') {
+      if (display.length < current.length) {
+        timeout = setTimeout(() => setDisplay(current.slice(0, display.length + 1)), speed)
+      } else {
+        timeout = setTimeout(() => setPhase('pausing'), pause)
+      }
+    } else if (phase === 'pausing') {
+      timeout = setTimeout(() => setPhase('deleting'), 200)
+    } else if (phase === 'deleting') {
+      if (display.length > 0) {
+        timeout = setTimeout(() => setDisplay(display.slice(0, -1)), speed / 2)
+      } else {
+        setRoleIdx((i) => (i + 1) % texts.length)
+        setPhase('typing')
       }
     }
-    timerId = setTimeout(type, startDelay)
-    return () => clearTimeout(timerId)
-  }, [text, speed, startDelay])
+
+    return () => clearTimeout(timeout)
+  }, [display, phase, roleIdx, texts, speed, pause])
 
   return display
 }
 
 const Home = () => {
-  const roleText = useTypewriter(ROLE, 45, 400, 2500)
+  const roleText = useTypewriter(ROLES)
 
   return (
     <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      {/* Hero Section com visual de terminal */}
       <motion.header
         id="home"
         className="mb-16 pt-16"
@@ -58,6 +72,18 @@ const Home = () => {
           />
         </motion.div>
 
+        <motion.div
+          className="flex justify-center mb-3"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.25, duration: 0.4 }}
+        >
+          <span className="inline-flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-medium px-3 py-1 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            Disponível para novas oportunidades
+          </span>
+        </motion.div>
+
         <motion.h1
           className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +94,7 @@ const Home = () => {
         </motion.h1>
 
         <motion.h2
-          className="mt-2 text-xl sm:text-2xl font-medium text-sky-500 dark:text-sky-400 font-mono flex items-center justify-center"
+          className="mt-2 text-xl sm:text-2xl font-medium text-sky-500 dark:text-sky-400 font-mono flex items-center justify-center min-h-[2rem]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.6 }}
@@ -83,10 +109,23 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Desenvolvedor Full Stack com foco em Java Spring Boot, React, Flutter e bancos de dados
-          relacionais. Construo sistemas completos — do backend ao mobile — com atenção à segurança,
-          código limpo e documentação.
+          Desenvolvo sistemas completos — do backend em Java/Spring Boot ao frontend em React e apps
+          mobile com Flutter. Especialista em automação de processos com Power Automate e n8n,
+          reduzindo trabalho manual e aumentando eficiência operacional.
         </motion.p>
+
+        <motion.div
+          className="mt-6 flex flex-wrap justify-center gap-2 text-sm"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.65, duration: 0.5 }}
+        >
+          {['Java', 'Spring Boot', 'React', 'Flutter', 'PostgreSQL', 'Docker', 'Power Automate', 'n8n'].map((tag) => (
+            <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 px-2.5 py-0.5 rounded-full text-xs border border-gray-200 dark:border-gray-700">
+              {tag}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.div
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
@@ -108,6 +147,15 @@ const Home = () => {
             <FileText size={16} className="mr-2" />
             Ver Currículo
           </Link>
+          <a
+            href="https://www.linkedin.com/in/edsato"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-gray-600 text-gray-400 hover:border-sky-500 hover:text-sky-400 px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
+          >
+            <Linkedin size={16} className="mr-2" />
+            LinkedIn
+          </a>
           <a
             href="https://github.com/EduardoSato22"
             target="_blank"

@@ -5,31 +5,47 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: "Analista de Suporte Técnico JR",
-      company: "Laticínios Verde Campo",
-      period: "Abr 2025 - Atual",
-      location: "Lavras, MG",
-      description: "Suporte técnico nível 1 e 2 para aproximadamente 500 usuários. Automação de processos internos com Power Automate e n8n, gestão de Active Directory e Office 365, manutenção de infraestrutura de rede e apoio ao deploy de sistemas ERP.",
-      isCurrent: true
+      title: 'Analista de Suporte Técnico JR',
+      company: 'Laticínios Verde Campo',
+      period: 'Abr 2025 – Atual',
+      location: 'Lavras, MG',
+      isCurrent: true,
+      highlights: [
+        'Suporte técnico N1/N2 para ~500 usuários, reduzindo tempo médio de resolução de chamados',
+        'Automatizei fluxos de onboarding/offboarding com Power Automate, eliminando processos manuais recorrentes',
+        'Criei integrações entre sistemas internos usando n8n, conectando ERP, e-mail e ferramentas Microsoft 365',
+        'Gerencio Active Directory, Office 365 e infraestrutura de rede corporativa',
+        'Apoio ao deploy e manutenção de sistemas ERP, atuando como ponte entre TI e áreas de negócio',
+      ],
     },
     {
       id: 2,
-      title: "Assistente de TI",
-      company: "Laticínios Verde Campo",
-      period: "Ago 2024 – Mar 2025",
-      location: "Lavras, MG",
-      description: "Atendimento a chamados de hardware e software, inventário de ativos de TI, configuração de estações de trabalho e impressoras, e suporte a usuários em ferramentas Microsoft 365.",
-      isCurrent: false
+      title: 'Assistente de TI',
+      company: 'Laticínios Verde Campo',
+      period: 'Ago 2024 – Mar 2025',
+      location: 'Lavras, MG',
+      isCurrent: false,
+      highlights: [
+        'Atendimento a chamados de hardware e software, com foco em resolução rápida e documentação',
+        'Realizei inventário e controle de ativos de TI, organizando base de dados de equipamentos',
+        'Configuração de estações de trabalho, impressoras e periféricos para usuários corporativos',
+        'Suporte a ferramentas Microsoft 365 (Teams, SharePoint, Outlook, OneDrive)',
+      ],
     },
     {
       id: 3,
-      title: "Encarregado de Depósito",
-      company: "Lojas REDE",
-      period: "Nov 2022 – Jul 2024",
-      location: "",
-      description: "Liderança de equipe de 4 pessoas, controle de estoque com sistema ERP, organização logística e redução de perdas por inventário. Habilidades de liderança e processos aplicadas hoje na gestão de projetos de TI.",
-      isCurrent: false
-    }
+      title: 'Encarregado de Depósito',
+      company: 'Lojas REDE',
+      period: 'Nov 2022 – Jul 2024',
+      location: '',
+      isCurrent: false,
+      highlights: [
+        'Liderança de equipe de 4 pessoas, com foco em organização e cumprimento de metas',
+        'Controle de estoque via sistema ERP, reduzindo divergências por inventário',
+        'Organização logística de recebimento, armazenagem e expedição de produtos',
+        'Experiência com liderança e gestão de processos, base para atuação em projetos de TI',
+      ],
+    },
   ]
 
   return (
@@ -45,7 +61,7 @@ const Experience = () => {
         Experiência Profissional
       </h3>
       <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">
-        <div className="space-y-8">
+        <div className="space-y-10">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
@@ -55,28 +71,34 @@ const Experience = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white">
-                    {exp.title}
-                  </h4>
-                  <p className="text-sky-400 font-medium">
-                    {exp.company}
-                  </p>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {exp.title}
+                    </h4>
+                    {exp.isCurrent && (
+                      <span className="inline-flex items-center gap-1 bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-medium px-2 py-0.5 rounded-full">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                        Atual
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sky-400 font-medium mt-0.5">{exp.company}</p>
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-0">
+                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-0 md:text-right shrink-0">
                   <div>{exp.period}</div>
                   {exp.location && <div>{exp.location}</div>}
                 </div>
               </div>
-              <p className="text-gray-700 dark:text-gray-300">
-                {exp.description}
-              </p>
-              {exp.isCurrent && (
-                <span className="inline-block bg-green-900/50 text-green-300 px-2 py-1 rounded text-xs mt-2">
-                  Atual
-                </span>
-              )}
+              <ul className="space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                {exp.highlights.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-sky-500/70 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

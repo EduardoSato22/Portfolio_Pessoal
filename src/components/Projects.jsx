@@ -1,35 +1,36 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Server, MapPin, Zap, Globe, Github, X, FileJson, ExternalLink } from 'lucide-react'
+import { Server, MapPin, Zap, Globe, Github, X, FileJson, ExternalLink, Clock } from 'lucide-react'
 
 const SWAGGER_URL = 'http://app-full-stack-crm.onrender.com/swagger-ui/index.html'
 
 const projectsData = [
   {
     id: 1,
-    title: 'RetailFlow · CRM de Clientes e Catálogo de Produtos',
+    title: 'RetailFlow · CRM Full Stack',
     shortDescription:
-      'CRM full stack (Frameworks Web II). Backend Spring Boot, frontend React, documentação Swagger, deploy Render + Vercel.',
+      'Sistema CRM completo com autenticação JWT, CRUD protegido e documentação Swagger. Backend Java/Spring Boot + frontend React/TypeScript com deploy independente.',
     technologies: ['Java 17', 'Spring Boot', 'Spring Security', 'JWT', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     previewUrl: 'https://retailflow-front.vercel.app/',
     githubUrl: 'https://github.com/EduardoSato22?tab=repositories&q=retailflow',
     swaggerUrl: SWAGGER_URL,
+    renderColdStart: true,
     icon: Server,
     image: '/images/retailflow-crm.jpg',
     detail: {
       context:
-        'Projeto final da disciplina Frameworks Web II (Unilavras). CRM acadêmico completo para gestão de clientes e catálogo de produtos.',
+        'CRM completo para gestão de clientes e catálogo de produtos, desenvolvido como projeto final de Frameworks Web II. Demonstra arquitetura full stack com segurança e deploy em produção.',
       features: [
-        'CRUD completo de clientes e produtos, com relacionamento por usuário',
-        'Autenticação e autorização com JWT e Spring Security',
-        'Documentação viva da API via Swagger/OpenAPI (springdoc-openapi)',
-        'Backend: Java 17, Spring Boot, Spring Data JPA, PostgreSQL/H2, Maven',
+        'Autenticação e autorização com JWT + Spring Security (BCrypt, tokens com expiração)',
+        'CRUD completo de clientes e produtos com relacionamento por usuário autenticado',
+        'Documentação interativa da API via Swagger/OpenAPI (springdoc-openapi)',
+        'Backend: Java 17, Spring Boot, Spring Data JPA, PostgreSQL (prod) / H2 (dev), Maven',
         'Frontend: React 18, TypeScript, Vite, React Router DOM, Material UI, Axios',
-        'Deploy: backend no Render, frontend na Vercel; scripts e Docker Compose para ambiente local',
-        'Senhas com BCrypt; tokens JWT com expiração configurável; CORS e variáveis de ambiente para produção',
+        'Docker Compose para ambiente local; backend no Render, frontend na Vercel',
+        'CORS configurado por ambiente, variáveis de ambiente separadas para dev/prod',
       ],
       architecture:
-        'retailflow/ → backend/ (API REST Java/Spring), frontend/ (SPA React), docker-compose.yml. Endpoints: POST /api/auth/register e /login; GET/POST/PUT/DELETE /api/customers e /api/products (rotas protegidas com Bearer token).',
+        'retailflow/\n├── backend/   → API REST Java/Spring Boot\n├── frontend/  → SPA React + TypeScript\n└── docker-compose.yml\n\nEndpoints principais:\n  POST /api/auth/register | /api/auth/login\n  GET/POST/PUT/DELETE /api/customers (protegido)\n  GET/POST/PUT/DELETE /api/products  (protegido)',
       links: [
         { label: 'Aplicação (Frontend)', url: 'https://retailflow-front.vercel.app/' },
         { label: 'Documentação Swagger (API)', url: SWAGGER_URL },
@@ -38,53 +39,27 @@ const projectsData = [
     },
   },
   {
-    id: 2,
-    title: 'Doceria Delicatto · Website Responsivo',
-    shortDescription:
-      'Site moderno e responsivo para confeitaria de doces artesanais, com vitrine de produtos e contato via WhatsApp.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Mobile First', 'Vercel'],
-    previewUrl: 'https://doceria-delicatto.vercel.app',
-    githubUrl: 'https://github.com/EduardoSato22/Doceria_Delicatto',
-    swaggerUrl: null,
-    icon: Zap,
-    image: '/images/doceria-delicatto.jpg',
-    detail: {
-      context:
-        'Website desenvolvido para a Doceria Delicatto, destacando doces artesanais, foco em experiência visual agradável e navegação simples para o cliente final.',
-      features: [
-        'Layout moderno com foco em produtos e experiência visual',
-        'Design totalmente responsivo (desktop, tablet e mobile)',
-        'Galeria de produtos com imagens otimizadas',
-        'Seção de contato direcionando pedidos diretamente para o WhatsApp',
-        'Performance otimizada para carregamento rápido no navegador',
-      ],
-      architecture:
-        'Projeto estático com HTML, CSS e JavaScript. Organização em seções: apresentação, vitrine de produtos e contato. Deploy realizado na Vercel.',
-      links: [
-        { label: 'Ver site da Doceria', url: 'https://doceria-delicatto.vercel.app' },
-        { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Doceria_Delicatto' },
-      ],
-    },
-  },
-  {
     id: 3,
-    title: 'API REST Full com Cache e JWT',
-    shortDescription: 'API RESTful com autenticação JWT, estratégias de cache e interface web, focada em performance e segurança.',
-    technologies: ['Node.js', 'Express', 'JWT', 'Cache'],
+    title: 'API REST com Cache e JWT',
+    shortDescription:
+      'API Node.js/Express com autenticação JWT, estratégia de cache em memória e interface web para demonstração. Foco em performance e boas práticas de segurança.',
+    technologies: ['Node.js', 'Express', 'JWT', 'Cache', 'JavaScript'],
     previewUrl: 'https://backend-api-rest-full-cache-jwt.vercel.app/',
     githubUrl: 'https://github.com/EduardoSato22/Backend_API_RestFull_Cache_JWT',
     swaggerUrl: null,
+    renderColdStart: false,
     icon: Server,
     image: '/images/api-rest-cache-jwt.jpg',
     detail: {
-      context: 'API REST completa com sistema de cache, autenticação JWT e interface web para interação com recursos. Inclui monitoramento de cache em tempo real.',
+      context: 'API REST com foco em performance: implementa cache em memória para reduzir latência em recursos frequentemente acessados, com autenticação JWT em rotas protegidas.',
       features: [
-        'Autenticação JWT para rotas protegidas',
-        'Estratégias de cache para melhor performance',
-        'Interface web para testes e demonstração',
-        'Boas práticas de segurança e organização de código',
+        'Autenticação JWT com geração e validação de tokens',
+        'Cache em memória com TTL configurável para reduzir requisições redundantes',
+        'Middleware de autenticação para rotas protegidas vs. públicas',
+        'Interface web integrada para testes e demonstração da API',
+        'Organização em camadas: routes, controllers, middlewares, utils',
       ],
-      architecture: 'Backend Node.js com Express; camada de cache; rotas protegidas e públicas.',
+      architecture: 'Node.js + Express; middleware JWT; camada de cache em memória; rotas protegidas e públicas separadas. Deploy na Vercel.',
       links: [
         { label: 'Ver aplicação', url: 'https://backend-api-rest-full-cache-jwt.vercel.app/' },
         { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Backend_API_RestFull_Cache_JWT' },
@@ -92,24 +67,54 @@ const projectsData = [
     },
   },
   {
+    id: 2,
+    title: 'Doceria Delicatto · Website',
+    shortDescription:
+      'Site responsivo para confeitaria com vitrine de produtos, galeria e integração direta ao WhatsApp para pedidos. Mobile-first, deploy na Vercel.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Mobile First', 'Vercel'],
+    previewUrl: 'https://doceria-delicatto.vercel.app',
+    githubUrl: 'https://github.com/EduardoSato22/Doceria_Delicatto',
+    swaggerUrl: null,
+    renderColdStart: false,
+    icon: Zap,
+    image: '/images/doceria-delicatto.jpg',
+    detail: {
+      context:
+        'Website real entregue para a Doceria Delicatto. Foco em UX: apresentação visual dos produtos, navegação simples e conversão direta para pedido via WhatsApp.',
+      features: [
+        'Layout moderno com hierarquia visual clara e foco nos produtos',
+        'Design totalmente responsivo — mobile, tablet e desktop',
+        'Galeria de produtos com imagens otimizadas para web',
+        'CTA integrado ao WhatsApp para conversão direta de pedidos',
+        'Carregamento rápido com HTML/CSS/JS puro, sem dependências',
+      ],
+      architecture: 'Projeto estático (HTML, CSS, JavaScript). Seções: hero, vitrine de produtos e contato com WhatsApp. Deploy na Vercel com CDN global.',
+      links: [
+        { label: 'Ver site da Doceria', url: 'https://doceria-delicatto.vercel.app' },
+        { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Doceria_Delicatto' },
+      ],
+    },
+  },
+  {
     id: 4,
-    title: 'CEP Fácil - API Correios',
-    shortDescription: 'Ferramenta web para consulta de CEP e endereços no Brasil, com integração à API ViaCEP.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'API'],
+    title: 'CEP Fácil · Consulta de Endereços',
+    shortDescription: 'App web para busca de CEP e endereços no Brasil via API ViaCEP. Suporta busca por CEP ou por logradouro/cidade/UF.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'ViaCEP API'],
     previewUrl: 'https://cepapicorreios.vercel.app/',
     githubUrl: 'https://github.com/EduardoSato22/CEP_API_Correios',
     swaggerUrl: null,
+    renderColdStart: false,
     icon: MapPin,
     image: '/images/cep-api-correios.jpg',
     detail: {
-      context: 'Projeto web para consulta de CEP e endereços em todo o Brasil. Interface intuitiva com busca por CEP ou por endereço (logradouro, cidade, UF), utilizando a API ViaCEP.',
+      context: 'Ferramenta web para consulta de CEP e endereços em todo o Brasil, com duas modalidades de busca e feedback visual para o usuário.',
       features: [
-        'Busca por CEP (digitação formatada ou livre)',
+        'Busca por CEP com formatação automática',
         'Busca reversa por endereço (rua, cidade, estado)',
+        'Feedback visual de carregamento, sucesso e erro',
         'Interface responsiva e acessível',
-        'Feedback visual de carregamento e erros',
       ],
-      architecture: 'Front-end estático (HTML, CSS, JavaScript) consumindo a API pública ViaCEP.',
+      architecture: 'Front-end estático (HTML, CSS, JavaScript) consumindo a API pública ViaCEP. Deploy na Vercel.',
       links: [
         { label: 'Abrir aplicação', url: 'https://cepapicorreios.vercel.app/' },
         { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/CEP_API_Correios' },
@@ -118,23 +123,24 @@ const projectsData = [
   },
   {
     id: 5,
-    title: 'API Pokémon',
-    shortDescription: 'Aplicação React para consulta de informações de Pokémon, com listagem e integração a API pública.',
-    technologies: ['React', 'JavaScript', 'API'],
+    title: 'PokéDex · React + PokeAPI',
+    shortDescription: 'Aplicação React que consome a PokeAPI para listar e exibir detalhes de Pokémon — tipos, estatísticas, habilidades e imagens.',
+    technologies: ['React', 'JavaScript', 'PokeAPI', 'CSS'],
     previewUrl: 'https://api-pokemon-taupe.vercel.app/',
     githubUrl: 'https://github.com/EduardoSato22/Api_Pokemon',
     swaggerUrl: null,
+    renderColdStart: false,
     icon: Zap,
     image: '/images/api-pokemon.jpg',
     detail: {
-      context: 'Aplicação React que consome API pública de Pokémon para exibir dados detalhados, estatísticas e imagens. Interface responsiva e moderna.',
+      context: 'SPA React que consome API REST pública (PokeAPI) para exibir listagem e detalhes por Pokémon. Demonstra consumo de APIs externas, gerenciamento de estado e UX com loading states.',
       features: [
-        'Listagem de Pokémon com paginação ou scroll',
-        'Detalhes por Pokémon (tipos, estatísticas, imagens)',
-        'Integração com API pública (PokeAPI ou similar)',
-        'UI responsiva e feedback de carregamento',
+        'Listagem de Pokémon com scroll ou paginação',
+        'Página de detalhes: tipos, estatísticas base, habilidades e sprites',
+        'Feedback de carregamento com loading state',
+        'UI responsiva adaptada para mobile',
       ],
-      architecture: 'Single Page Application em React; chamadas HTTP à API; estado local ou hooks para listagem e detalhes.',
+      architecture: 'SPA em React; fetch à PokeAPI; estado local com hooks (useState, useEffect). Deploy na Vercel.',
       links: [
         { label: 'Ver aplicação', url: 'https://api-pokemon-taupe.vercel.app/' },
         { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Api_Pokemon' },
@@ -145,7 +151,7 @@ const projectsData = [
 
 function ProjectDetailModal({ project, onClose }) {
   if (!project) return null
-  const { detail, title, technologies, previewUrl, githubUrl, swaggerUrl, image, id } = project
+  const { detail, title, technologies, previewUrl, githubUrl, swaggerUrl, image, id, renderColdStart } = project
   const imageSrc = image || `https://picsum.photos/seed/${id}/800/450`
 
   return (
@@ -187,6 +193,12 @@ function ProjectDetailModal({ project, onClose }) {
           <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 text-center">
             Role para ver a descrição completa, recursos e links do projeto.
           </p>
+          {renderColdStart && (
+            <div className="flex items-start gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs rounded-lg px-3 py-2">
+              <Clock size={13} className="mt-0.5 flex-shrink-0" />
+              <span>O backend roda no Render (plano gratuito) e pode levar <strong>até 30 segundos</strong> para acordar na primeira requisição. Aguarde o carregamento inicial.</span>
+            </div>
+          )}
           {detail.context && (
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{detail.context}</p>
           )}
@@ -366,7 +378,13 @@ const Projects = () => {
                   </a>
                 )}
               </div>
-              <p className="mt-3 text-xs text-sky-500 dark:text-sky-400">Clique no card para mais detalhes</p>
+              {project.renderColdStart && (
+                <p className="mt-2 flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400">
+                  <Clock size={11} />
+                  Backend pode levar ~30s para iniciar (Render free tier)
+                </p>
+              )}
+              <p className="mt-2 text-xs text-sky-500 dark:text-sky-400">Clique no card para mais detalhes</p>
             </motion.div>
           ))}
         </div>

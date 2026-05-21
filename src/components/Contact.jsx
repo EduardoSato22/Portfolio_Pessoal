@@ -193,10 +193,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Email</h4>
                   <a
-                    href="mailto:contato@eduardosato.com"
+                    href="mailto:eduardosato22@gmail.com"
                     className="text-sky-400 hover:text-sky-300 transition-colors flex items-center"
                   >
-                    contato@eduardosato.com
+                    eduardosato22@gmail.com
                     <ExternalLink size={16} className="ml-1" />
                   </a>
                 </div>

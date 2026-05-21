@@ -210,6 +210,9 @@ const Curriculum = () => {
               <p className="text-gray-300 text-sm">
                 Análise e Desenvolvimento de Sistemas
               </p>
+              <p className="text-gray-400 text-xs mt-1">
+                MBA em Engenharia de Software · Descomplica (em curso)
+              </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
