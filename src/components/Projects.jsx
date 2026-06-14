@@ -49,7 +49,7 @@ const projectsData = [
       'Para demonstrar arquitetura enterprise full stack, construí um CRM completo com JWT + Spring Security, CRUD protegido, documentação Swagger interativa, Docker Compose e deploy independente de backend e frontend em produção.',
     technologies: ['Java 17', 'Spring Boot', 'Spring Security', 'JWT', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     previewUrl: 'https://retailflow-front.vercel.app/',
-    githubUrl: 'https://github.com/EduardoSato22?tab=repositories&q=retailflow',
+    githubUrl: 'https://github.com/EduardoSato22/APP_Full_Stack_CRM',
     swaggerUrl: SWAGGER_URL,
     isPrivate: false,
     isProduction: false,
@@ -73,7 +73,7 @@ const projectsData = [
       links: [
         { label: 'Aplicação (Frontend)', url: 'https://retailflow-front.vercel.app/' },
         { label: 'Documentação Swagger (API)', url: SWAGGER_URL },
-        { label: 'Repositórios no GitHub', url: 'https://github.com/EduardoSato22?tab=repositories&q=retailflow' },
+        { label: 'Repositório no GitHub', url: 'https://github.com/EduardoSato22/APP_Full_Stack_CRM' },
       ],
     },
   },
