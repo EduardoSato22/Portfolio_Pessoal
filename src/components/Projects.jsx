@@ -1,25 +1,64 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Server, MapPin, Zap, Globe, Github, X, FileJson, ExternalLink, Clock } from 'lucide-react'
+import { Server, Globe, Github, X, FileJson, ExternalLink, Clock, Lock, ShoppingBag, Building2 } from 'lucide-react'
 
 const SWAGGER_URL = 'http://app-full-stack-crm.onrender.com/swagger-ui/index.html'
 
 const projectsData = [
   {
+    id: 2,
+    featured: true,
+    title: 'Delicatto · E-commerce Full Stack',
+    shortDescription:
+      'A Doceria Delicatto precisava vender online com pagamentos reais. Desenvolvi o e-commerce completo — do checkout com PIX/cartão via Mercado Pago ao painel admin com pedidos em tempo real via Socket.IO. Cliente real, em produção.',
+    technologies: ['React 18', 'Node.js', 'Express', 'Socket.IO', 'Prisma', 'PostgreSQL', 'Mercado Pago', 'JWT'],
+    previewUrl: 'https://www.doceriadelicatto.com.br/',
+    githubUrl: null,
+    swaggerUrl: null,
+    isPrivate: true,
+    isProduction: true,
+    renderColdStart: false,
+    icon: ShoppingBag,
+    image: '/images/delicatto-ecommerce.jpeg',
+    detail: {
+      context:
+        'A Doceria Delicatto precisava de mais do que um site vitrine — precisava de uma loja funcional. Fui responsável por todo o desenvolvimento: da modelagem do banco (15 modelos Prisma/PostgreSQL) ao painel admin com kanban em tempo real. Resultado: e-commerce em produção com PIX, cartão de crédito e acompanhamento de pedidos ao vivo.',
+      features: [
+        'Pagamentos PIX e cartão de crédito via Mercado Pago (integração completa com webhooks)',
+        'Tempo real via Socket.IO: status do pedido atualizado ao vivo para cliente e admin',
+        'Painel admin kanban (arrastar e soltar) para gestão de pedidos em tempo real',
+        'Autenticação dupla JWT: admin e cliente separados com httpOnly cookies',
+        'Upload e otimização de imagens de produtos via Cloudinary',
+        'E-mails transacionais (confirmação de pedido, notificações) com Resend',
+        'Backend: Node.js, Express, Prisma ORM, PostgreSQL (Supabase) — 15 modelos',
+        'Frontend: React 18, Vite, Zustand (estado global); Admin: HTML + JS vanilla',
+        'Deploy: backend no Render, frontend e admin na Vercel',
+      ],
+      architecture:
+        'dellicato/\n├── backend/   → Node.js + Express + Prisma + Socket.IO\n├── frontend/  → React 18 + Vite + Zustand\n└── admin/     → Kanban HTML + JS + Socket.IO\n\nIntegrações externas:\n  Mercado Pago  → PIX + cartão + webhooks\n  Cloudinary    → storage de imagens\n  Resend        → e-mails transacionais\n  Supabase      → PostgreSQL em produção',
+      links: [
+        { label: 'Ver e-commerce', url: 'https://www.doceriadelicatto.com.br/' },
+      ],
+    },
+  },
+  {
     id: 1,
+    featured: false,
     title: 'RetailFlow · CRM Full Stack',
     shortDescription:
-      'Sistema CRM completo com autenticação JWT, CRUD protegido e documentação Swagger. Backend Java/Spring Boot + frontend React/TypeScript com deploy independente.',
+      'Para demonstrar arquitetura enterprise full stack, construí um CRM completo com JWT + Spring Security, CRUD protegido, documentação Swagger interativa, Docker Compose e deploy independente de backend e frontend em produção.',
     technologies: ['Java 17', 'Spring Boot', 'Spring Security', 'JWT', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     previewUrl: 'https://retailflow-front.vercel.app/',
     githubUrl: 'https://github.com/EduardoSato22?tab=repositories&q=retailflow',
     swaggerUrl: SWAGGER_URL,
+    isPrivate: false,
+    isProduction: false,
     renderColdStart: true,
     icon: Server,
     image: '/images/retailflow-crm.jpg',
     detail: {
       context:
-        'CRM completo para gestão de clientes e catálogo de produtos, desenvolvido como projeto final de Frameworks Web II. Demonstra arquitetura full stack com segurança e deploy em produção.',
+        'Projeto que demonstra domínio de arquitetura full stack enterprise: autenticação JWT com Spring Security, CRUD completo com relacionamento por usuário autenticado, documentação Swagger interativa e ambientes de dev/prod isolados com Docker Compose.',
       features: [
         'Autenticação e autorização com JWT + Spring Security (BCrypt, tokens com expiração)',
         'CRUD completo de clientes e produtos com relacionamento por usuário autenticado',
@@ -40,118 +79,61 @@ const projectsData = [
   },
   {
     id: 3,
-    title: 'API REST com Cache e JWT',
+    featured: false,
+    title: 'LR Móveis · Site Institucional',
     shortDescription:
-      'API Node.js/Express com autenticação JWT, estratégia de cache em memória e interface web para demonstração. Foco em performance e boas práticas de segurança.',
-    technologies: ['Node.js', 'Express', 'JWT', 'Cache', 'JavaScript'],
-    previewUrl: 'https://backend-api-rest-full-cache-jwt.vercel.app/',
-    githubUrl: 'https://github.com/EduardoSato22/Backend_API_RestFull_Cache_JWT',
+      'LR Móveis precisava de um site que transmitisse a qualidade premium dos seus produtos. Entregamos um site institucional com scroll scrubbing via canvas frame-sequence (zero jank), animações GSAP e cobertura de testes E2E. Cliente real, em produção.',
+    technologies: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Framer Motion', 'Vitest', 'Playwright'],
+    previewUrl: 'https://lr-moveis-planejados.vercel.app/',
+    githubUrl: null,
     swaggerUrl: null,
+    isPrivate: true,
+    isProduction: true,
     renderColdStart: false,
-    icon: Server,
-    image: '/images/api-rest-cache-jwt.jpg',
-    detail: {
-      context: 'API REST com foco em performance: implementa cache em memória para reduzir latência em recursos frequentemente acessados, com autenticação JWT em rotas protegidas.',
-      features: [
-        'Autenticação JWT com geração e validação de tokens',
-        'Cache em memória com TTL configurável para reduzir requisições redundantes',
-        'Middleware de autenticação para rotas protegidas vs. públicas',
-        'Interface web integrada para testes e demonstração da API',
-        'Organização em camadas: routes, controllers, middlewares, utils',
-      ],
-      architecture: 'Node.js + Express; middleware JWT; camada de cache em memória; rotas protegidas e públicas separadas. Deploy na Vercel.',
-      links: [
-        { label: 'Ver aplicação', url: 'https://backend-api-rest-full-cache-jwt.vercel.app/' },
-        { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Backend_API_RestFull_Cache_JWT' },
-      ],
-    },
-  },
-  {
-    id: 2,
-    title: 'Doceria Delicatto · Website',
-    shortDescription:
-      'Site responsivo para confeitaria com vitrine de produtos, galeria e integração direta ao WhatsApp para pedidos. Mobile-first, deploy na Vercel.',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Mobile First', 'Vercel'],
-    previewUrl: 'https://doceria-delicatto.vercel.app',
-    githubUrl: 'https://github.com/EduardoSato22/Doceria_Delicatto',
-    swaggerUrl: null,
-    renderColdStart: false,
-    icon: Zap,
-    image: '/images/doceria-delicatto.jpg',
+    icon: Building2,
+    image: '/images/lr-moveis.jpeg',
     detail: {
       context:
-        'Website real entregue para a Doceria Delicatto. Foco em UX: apresentação visual dos produtos, navegação simples e conversão direta para pedido via WhatsApp.',
+        'LR Móveis Planejados queria um site que transmitisse qualidade premium. A solução técnica central: scroll scrubbing com canvas frame-sequence — vídeo de apresentação dos produtos animado pelo scroll do usuário, sem travamentos. Construído com Next.js 15, TypeScript estrito e cobertura de testes E2E com Playwright.',
       features: [
-        'Layout moderno com hierarquia visual clara e foco nos produtos',
-        'Design totalmente responsivo — mobile, tablet e desktop',
-        'Galeria de produtos com imagens otimizadas para web',
-        'CTA integrado ao WhatsApp para conversão direta de pedidos',
-        'Carregamento rápido com HTML/CSS/JS puro, sem dependências',
+        'Scroll scrubbing via canvas frame-sequence: frames pré-extraídos de vídeo renderizados em canvas conforme o scroll — zero jank',
+        'Canvas desabilitado em mobile com fallback para imagem estática (performance em dispositivos touch)',
+        'Animações de alta performance com GSAP + scroll suave com Lenis',
+        'TypeScript estrito em 91.4% do código-base',
+        'Testes unitários com Vitest + testes E2E com Playwright',
+        'Next.js 15 com Turbopack para build ultrarrápido em desenvolvimento',
+        'Tailwind CSS com Framer Motion para transições de componentes',
       ],
-      architecture: 'Projeto estático (HTML, CSS, JavaScript). Seções: hero, vitrine de produtos e contato com WhatsApp. Deploy na Vercel com CDN global.',
+      architecture:
+        'Next.js 15 (App Router) + TypeScript\n\nDestaques técnicos:\n  canvas frame-sequence → scroll scrubbing zero jank\n  GSAP + Lenis         → animações e scroll suave\n  Vitest + Playwright  → testes unit + E2E\n  Turbopack            → dev build ultrarrápido\n\nDeploy: Vercel (produção)',
       links: [
-        { label: 'Ver site da Doceria', url: 'https://doceria-delicatto.vercel.app' },
-        { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Doceria_Delicatto' },
-      ],
-    },
-  },
-  {
-    id: 4,
-    title: 'CEP Fácil · Consulta de Endereços',
-    shortDescription: 'App web para busca de CEP e endereços no Brasil via API ViaCEP. Suporta busca por CEP ou por logradouro/cidade/UF.',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'ViaCEP API'],
-    previewUrl: 'https://cepapicorreios.vercel.app/',
-    githubUrl: 'https://github.com/EduardoSato22/CEP_API_Correios',
-    swaggerUrl: null,
-    renderColdStart: false,
-    icon: MapPin,
-    image: '/images/cep-api-correios.jpg',
-    detail: {
-      context: 'Ferramenta web para consulta de CEP e endereços em todo o Brasil, com duas modalidades de busca e feedback visual para o usuário.',
-      features: [
-        'Busca por CEP com formatação automática',
-        'Busca reversa por endereço (rua, cidade, estado)',
-        'Feedback visual de carregamento, sucesso e erro',
-        'Interface responsiva e acessível',
-      ],
-      architecture: 'Front-end estático (HTML, CSS, JavaScript) consumindo a API pública ViaCEP. Deploy na Vercel.',
-      links: [
-        { label: 'Abrir aplicação', url: 'https://cepapicorreios.vercel.app/' },
-        { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/CEP_API_Correios' },
-      ],
-    },
-  },
-  {
-    id: 5,
-    title: 'PokéDex · React + PokeAPI',
-    shortDescription: 'Aplicação React que consome a PokeAPI para listar e exibir detalhes de Pokémon — tipos, estatísticas, habilidades e imagens.',
-    technologies: ['React', 'JavaScript', 'PokeAPI', 'CSS'],
-    previewUrl: 'https://api-pokemon-taupe.vercel.app/',
-    githubUrl: 'https://github.com/EduardoSato22/Api_Pokemon',
-    swaggerUrl: null,
-    renderColdStart: false,
-    icon: Zap,
-    image: '/images/api-pokemon.jpg',
-    detail: {
-      context: 'SPA React que consome API REST pública (PokeAPI) para exibir listagem e detalhes por Pokémon. Demonstra consumo de APIs externas, gerenciamento de estado e UX com loading states.',
-      features: [
-        'Listagem de Pokémon com scroll ou paginação',
-        'Página de detalhes: tipos, estatísticas base, habilidades e sprites',
-        'Feedback de carregamento com loading state',
-        'UI responsiva adaptada para mobile',
-      ],
-      architecture: 'SPA em React; fetch à PokeAPI; estado local com hooks (useState, useEffect). Deploy na Vercel.',
-      links: [
-        { label: 'Ver aplicação', url: 'https://api-pokemon-taupe.vercel.app/' },
-        { label: 'Código no GitHub', url: 'https://github.com/EduardoSato22/Api_Pokemon' },
+        { label: 'Ver site', url: 'https://lr-moveis-planejados.vercel.app/' },
       ],
     },
   },
 ]
 
+function ProductionBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 text-[11px] bg-green-500/15 border border-green-500/30 text-green-400 px-2.5 py-0.5 rounded-full font-medium">
+      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+      Em produção
+    </span>
+  )
+}
+
+function PrivateBadge() {
+  return (
+    <span className="inline-flex items-center gap-1 border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 px-3 py-1.5 rounded text-sm cursor-default select-none">
+      <Lock size={13} />
+      Repositório Privado
+    </span>
+  )
+}
+
 function ProjectDetailModal({ project, onClose }) {
   if (!project) return null
-  const { detail, title, technologies, previewUrl, githubUrl, swaggerUrl, image, id, renderColdStart } = project
+  const { detail, title, technologies, previewUrl, githubUrl, swaggerUrl, image, id, renderColdStart, isPrivate, isProduction } = project
   const imageSrc = image || `https://picsum.photos/seed/${id}/800/450`
 
   return (
@@ -171,7 +153,10 @@ function ProjectDetailModal({ project, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm z-10">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white pr-4">{title}</h3>
+          <div className="flex items-center gap-3 pr-4 flex-wrap">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
+            {isProduction && <ProductionBadge />}
+          </div>
           <button
             type="button"
             onClick={onClose}
@@ -197,6 +182,12 @@ function ProjectDetailModal({ project, onClose }) {
             <div className="flex items-start gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs rounded-lg px-3 py-2">
               <Clock size={13} className="mt-0.5 flex-shrink-0" />
               <span>O backend roda no Render (plano gratuito) e pode levar <strong>até 30 segundos</strong> para acordar na primeira requisição. Aguarde o carregamento inicial.</span>
+            </div>
+          )}
+          {isPrivate && (
+            <div className="flex items-center gap-2 bg-gray-500/10 border border-gray-400/30 text-gray-600 dark:text-gray-400 text-xs rounded-lg px-3 py-2">
+              <Lock size={13} className="flex-shrink-0" />
+              <span>Repositório privado — projeto desenvolvido para cliente.</span>
             </div>
           )}
           {detail.context && (
@@ -260,15 +251,19 @@ function ProjectDetailModal({ project, onClose }) {
             <Globe size={16} />
             Ver projeto
           </a>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm"
-          >
-            <Github size={16} />
-            Código
-          </a>
+          {githubUrl ? (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white px-4 py-2 rounded-lg transition-colors text-sm"
+            >
+              <Github size={16} />
+              Código
+            </a>
+          ) : (
+            <PrivateBadge />
+          )}
           {swaggerUrl && (
             <a
               href={swaggerUrl}
@@ -310,18 +305,29 @@ const Projects = () => {
               tabIndex={0}
               onClick={() => setSelectedProject(project)}
               onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(project)}
-              className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-gray-200 dark:border-transparent cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+              className={`bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover-lift border border-gray-200 dark:border-transparent cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800${project.featured ? ' md:col-span-2' : ''}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center mb-4">
+              <div className="flex items-center mb-2">
                 <project.icon className="w-6 h-6 text-sky-400 mr-3 flex-shrink-0" />
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white">
                   {project.title}
                 </h4>
+                {project.isPrivate && (
+                  <span className="ml-auto flex items-center gap-1 text-[11px] text-gray-400 dark:text-gray-500">
+                    <Lock size={11} />
+                    privado
+                  </span>
+                )}
               </div>
+              {project.isProduction && (
+                <div className="mb-3">
+                  <ProductionBadge />
+                </div>
+              )}
               <div className="relative w-full overflow-hidden rounded-lg bg-gray-300 dark:bg-gray-600 mb-4 aspect-video group border border-gray-300 dark:border-gray-600">
                 <img
                   src={project.image || `https://picsum.photos/seed/${project.id}/800/450`}
@@ -355,16 +361,18 @@ const Projects = () => {
                   <Globe size={14} />
                   Ver projeto
                 </a>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white px-3 py-1.5 rounded text-sm"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Github size={14} />
-                  Código
-                </a>
+                {project.githubUrl ? (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white px-3 py-1.5 rounded text-sm"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Github size={14} />
+                    Código
+                  </a>
+                ) : null}
                 {project.swaggerUrl && (
                   <a
                     href={project.swaggerUrl}

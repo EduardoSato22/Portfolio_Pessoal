@@ -1,153 +1,82 @@
-# Portfólio Eduardo Sato - React
+# Eduardo Sato — Desenvolvedor Full Stack
 
+[![Portfolio](https://img.shields.io/badge/Ver_Portfólio-0ea5e9?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-pessoal-peach-pi.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edsato)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:eduardosato22@gmail.com)
+
+---
+
+## Quem sou
+
+Desenvolvedor Full Stack com **dois projetos de clientes reais em produção** — diferencial raro em perfis juniores.
+
+Construo do backend em Java/Spring Boot ao frontend em React. Comecei na TI pelo suporte técnico, onde aprendi como sistemas reais funcionam. Automatizei processos internos com Power Automate e n8n antes de migrar completamente para desenvolvimento.
+
+Atualmente no último ano de ADS (Unilavras) + MBA em Engenharia de Software (Descomplica, em andamento).
+
+---
+
+## Stack principal
+
+![Java](https://img.shields.io/badge/Java_17-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
 ![React](https://img.shields.io/badge/React_18-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-B73CE5?style=flat&logo=vite&logoColor=FFD62E)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js_16+-43853D?style=flat&logo=node.js&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=flat&logo=nextdotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)
 
-Portfólio profissional moderno e responsivo desenvolvido com React, Vite, Tailwind CSS e Framer Motion.
+---
 
-## 🚀 Características
+## Projetos em destaque
 
-- **React 18** com hooks modernos
-- **Vite** para build rápido e otimizado
-- **Tailwind CSS** para estilização
-- **Framer Motion** para animações suaves
-- **React Router** para navegação
-- **Lucide React** para ícones
-- **Tema claro/escuro** com persistência no localStorage
-- **Formulário de contato** com validação
-- **Currículo interativo** com Canvas embed
-- **40+ certificações** organizadas
-- **Totalmente responsivo**
+### 🛒 Delicatto · E-commerce Full Stack — *cliente real, em produção*
+> [doceriadelicatto.com.br](https://www.doceriadelicatto.com.br/) · repositório privado
 
-## 📁 Estrutura do Projeto
+E-commerce completo para confeitaria artesanal com pagamentos reais.
 
-```
-src/
-├── components/          # Componentes reutilizáveis
-│   ├── Navigation.jsx   # Navegação principal
-│   ├── Footer.jsx       # Rodapé
-│   ├── Hero.jsx         # Seção hero
-│   ├── Projects.jsx     # Seção de projetos
-│   ├── About.jsx        # Seção sobre
-│   ├── Experience.jsx   # Experiência profissional
-│   ├── Education.jsx    # Formação e certificações
-│   ├── Skills.jsx       # Habilidades
-│   ├── Contact.jsx      # Formulário de contato
-│   └── ThemeToggle.jsx  # Toggle de tema
-├── pages/               # Páginas
-│   ├── Home.jsx         # Página inicial
-│   └── Curriculum.jsx   # Página do currículo
-├── hooks/               # Hooks personalizados
-│   └── useTheme.js      # Hook para gerenciar tema
-├── App.jsx              # Componente principal
-├── main.jsx             # Ponto de entrada
-└── index.css            # Estilos globais
-```
+**O problema:** a doceria precisava de uma loja online funcional, não apenas um site vitrine.  
+**A solução:** e-commerce do zero — checkout com PIX e cartão via Mercado Pago, painel admin com kanban em tempo real via Socket.IO, autenticação dupla (admin/cliente), storage de imagens (Cloudinary) e e-mails transacionais (Resend).
 
-## 🛠️ Scripts Disponíveis
+`React 18` `Node.js` `Express` `Socket.IO` `Prisma` `PostgreSQL` `Mercado Pago` `JWT` `Cloudinary` `Resend`
 
-- `npm run dev` - Inicia servidor de desenvolvimento
-- `npm run build` - Gera build de produção
-- `npm run preview` - Visualiza build de produção
-- `npm run lint` - Executa linter
-- `npm run format` - Formata código com Prettier
+---
 
-## 🚀 Deploy na Vercel
+### 🪟 LR Móveis · Site Institucional — *cliente real, em produção*
+> [lr-moveis-planejados.vercel.app](https://lr-moveis-planejados.vercel.app/) · repositório privado
 
-### Opção 1: Deploy Automático via GitHub
+Site institucional para loja de móveis planejados com diferencial técnico: **scroll scrubbing via canvas frame-sequence** — vídeo de apresentação dos produtos animado pelo scroll do usuário com zero jank (solução própria, substitui `video.currentTime` por canvas para máxima performance).
 
-1. Faça push do código para um repositório GitHub
-2. Conecte o repositório na Vercel
-3. A Vercel detectará automaticamente que é um projeto Vite
-4. O deploy será feito automaticamente
+`Next.js 15` `TypeScript` `Tailwind CSS` `GSAP` `Lenis` `Vitest` `Playwright`
 
-### Opção 2: Deploy via Vercel CLI
+---
 
-1. Instale a Vercel CLI:
-```bash
-npm i -g vercel
-```
+### ⚙️ RetailFlow · CRM Full Stack — *código público*
+> [retailflow-front.vercel.app](https://retailflow-front.vercel.app/) · [GitHub](https://github.com/EduardoSato22?tab=repositories&q=retailflow) · [Swagger](http://app-full-stack-crm.onrender.com/swagger-ui/index.html)
 
-2. Faça login na Vercel:
-```bash
-vercel login
-```
+CRM completo demonstrando arquitetura enterprise: JWT + Spring Security, CRUD protegido por usuário, documentação Swagger interativa, Docker Compose e deploys independentes de backend e frontend.
 
-3. Deploy do projeto:
-```bash
-vercel
-```
+`Java 17` `Spring Boot` `Spring Security` `JWT` `React` `TypeScript` `PostgreSQL` `Docker`
 
-### Configurações da Vercel
+---
 
-O projeto já está configurado com:
-- **Framework**: Vite
-- **Build Command**: `npm run build`
-- **Output Directory**: `dist`
-- **Install Command**: `npm ci`
+## Este repositório
 
-## 📋 Pré-requisitos
+Código-fonte do portfólio pessoal — React 18 + Vite + Tailwind CSS + Framer Motion, deploy na Vercel.
 
-- Node.js 16+ 
-- npm 8+
-
-## 🔧 Instalação
-
-1. Clone o repositório:
-```bash
-git clone <url-do-repositorio>
-cd Portfolio_Pessoal
-```
-
-2. Instale as dependências:
 ```bash
 npm install
+npm run dev      # localhost:5173
+npm run build    # build de produção
 ```
 
-3. Inicie o servidor de desenvolvimento:
-```bash
-npm run dev
-```
+---
 
-## 🎨 Personalização
+## Contato
 
-### Tema
-O projeto suporta tema claro e escuro. O tema é persistido no localStorage e pode ser alterado pelo botão na navegação.
+Aberto a oportunidades como desenvolvedor — presencialmente em **Lavras/MG** ou **remoto**.
 
-### Cores
-As cores principais podem ser alteradas no arquivo `tailwind.config.js` e `src/index.css`.
-
-### Conteúdo
-- **Projetos**: Edite o array `projects` em `src/components/Projects.jsx`
-- **Experiência**: Edite o array `experiences` em `src/components/Experience.jsx`
-- **Certificações**: Edite o array `certifications` em `src/components/Education.jsx`
-- **Habilidades**: Edite o array `skills` em `src/components/Skills.jsx`
-
-## 📱 Responsividade
-
-O projeto é totalmente responsivo e funciona em:
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (até 767px)
-
-## 🔍 SEO
-
-- Meta tags otimizadas
-- Estrutura semântica HTML
-- Alt text em imagens
-- URLs amigáveis
-
-## 📄 Licença
-
-MIT License - veja o arquivo LICENSE para detalhes.
-
-## 👨‍💻 Autor
-
-**Eduardo Sato**
-- LinkedIn: [linkedin.com/in/edsato](https://www.linkedin.com/in/edsato)
-- GitHub: [github.com/EduardoSato22](https://github.com/EduardoSato22)
-- Email: contato@eduardosato.com
+- **LinkedIn:** [linkedin.com/in/edsato](https://www.linkedin.com/in/edsato)
+- **Email:** eduardosato22@gmail.com
+- **GitHub:** [github.com/EduardoSato22](https://github.com/EduardoSato22)

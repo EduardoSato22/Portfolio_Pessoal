@@ -31,18 +31,20 @@ const About = () => {
             </div>
 
             <p className="text-base mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
-              Sou desenvolvedor full stack com foco em construir soluções que gerem impacto real para
-              o negócio — unindo backend sólido em Java/Spring Boot, frontend moderno em React e
-              automação inteligente com Power Automate e n8n.
+              Sou desenvolvedor full stack com dois projetos de clientes reais em produção — um
+              e-commerce completo com Mercado Pago e um site institucional com animações avançadas.
+              Construo do backend em Java/Spring Boot ao frontend em React, priorizando código que
+              funciona no mundo real.
             </p>
             <p className="text-base mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
-              Atualmente atuo como Analista de Suporte Técnico JR na Laticínios Verde Campo, onde
-              conecto infraestrutura e desenvolvimento: automatizo processos internos, integro sistemas
-              e desenvolvimento soluções que aumentam a eficiência da operação.
+              Comecei na TI pelo suporte — e foi lá que entendi como sistemas reais funcionam (e
+              falham). Automatizei processos internos com Power Automate e n8n, o que acelerou minha
+              transição: percebi que preferia construir as ferramentas a apenas mantê-las.
             </p>
             <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-              Busco uma vaga como desenvolvedor onde possa aplicar e evoluir minhas habilidades em
-              Java, React ou Flutter — presencialmente em Lavras/MG ou remotamente.
+              Hoje, enquanto atuo como Analista JR na Verde Campo, desenvolvo projetos por conta
+              própria e busco minha primeira vaga exclusivamente como desenvolvedor —
+              presencialmente em Lavras/MG ou remotamente.
             </p>
           </div>
 

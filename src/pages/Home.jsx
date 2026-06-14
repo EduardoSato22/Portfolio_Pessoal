@@ -12,7 +12,6 @@ import Contact from '../components/Contact'
 const ROLES = [
   'Desenvolvedor Full Stack',
   'Java · Spring Boot · React',
-  'Automação · Power Automate · n8n',
 ]
 
 function useTypewriter(texts, speed = 45, pause = 1800) {
@@ -109,9 +108,9 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Desenvolvo sistemas completos — do backend em Java/Spring Boot ao frontend em React e apps
-          mobile com Flutter. Especialista em automação de processos com Power Automate e n8n,
-          reduzindo trabalho manual e aumentando eficiência operacional.
+          Desenvolvo sistemas completos — do backend em Java/Spring Boot ao frontend em React.
+          Dois projetos de clientes reais em produção: e-commerce com Mercado Pago e Socket.IO,
+          e site institucional com animações avançadas de scroll.
         </motion.p>
 
         <motion.div
@@ -120,7 +119,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.5 }}
         >
-          {['Java', 'Spring Boot', 'React', 'Flutter', 'PostgreSQL', 'Docker', 'Power Automate', 'n8n'].map((tag) => (
+          {['Java', 'Spring Boot', 'React', 'TypeScript', 'Next.js', 'PostgreSQL', 'Docker', 'Flutter'].map((tag) => (
             <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 px-2.5 py-0.5 rounded-full text-xs border border-gray-200 dark:border-gray-700">
               {tag}
             </span>
