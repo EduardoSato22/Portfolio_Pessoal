@@ -11,11 +11,11 @@ const Experience = () => {
       location: 'Lavras, MG',
       isCurrent: true,
       highlights: [
-        'Suporte técnico N1/N2 para ~500 usuários, reduzindo tempo médio de resolução de chamados',
-        'Automatizei fluxos de onboarding/offboarding com Power Automate, eliminando processos manuais recorrentes',
-        'Criei integrações entre sistemas internos usando n8n, conectando ERP, e-mail e ferramentas Microsoft 365',
-        'Gerencio Active Directory, Office 365 e infraestrutura de rede corporativa',
-        'Apoio ao deploy e manutenção de sistemas ERP, atuando como ponte entre TI e áreas de negócio',
+        'Desenvolvi e implantei automações com n8n, Chatwoot, Evolution API e Docker, reduzindo tarefas manuais e aumentando a eficiência operacional do time de TI',
+        'Criei fluxos de comunicação e atendimento interno integrando canais via API, orquestrando serviços em containers Docker',
+        'Gestão completa do ciclo de vida de equipamentos (celulares, notebooks, desktops): distribuição, configuração e manutenção',
+        'Criação e gerenciamento de usuários em ERP Datasul e Active Directory, assegurando conformidade com políticas de segurança',
+        'Suporte N1/N2 para ~500 usuários; manutenção de sistemas especializados (impressão, pesagem, câmeras) com escalonamento eficiente',
       ],
     },
     {

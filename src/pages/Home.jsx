@@ -108,9 +108,9 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Desenvolvo sistemas completos — do backend em Java/Spring Boot ao frontend em React.
-          Dois projetos de clientes reais em produção: e-commerce com Mercado Pago e Socket.IO,
-          e site institucional com animações avançadas de scroll.
+          Desenvolvo sistemas full stack e automatizo processos — Java/Spring Boot, React e Node.js no código;
+          n8n, Chatwoot e Evolution API nas automações. Dois projetos de clientes reais em produção.
+          Aberto a vagas de desenvolvimento, automação e TI.
         </motion.p>
 
         <motion.div

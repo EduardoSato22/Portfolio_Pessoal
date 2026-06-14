@@ -13,6 +13,26 @@ const Education = () => {
   const certifications = [
     // --- CERTIFICAÇÕES TÉCNICAS (DESTAQUE) ---
     {
+      id: 0,
+      category: 'Tecnologia e Desenvolvimento',
+      title: 'Java Development',
+      institution: 'FIAP',
+      year: '2026',
+      icon: Code,
+      color: 'orange',
+      file: null
+    },
+    {
+      id: 19,
+      category: 'Tecnologia e Desenvolvimento',
+      title: 'Node.js: Introdução ao Desenvolvimento de APIs Modernas',
+      institution: 'IFRS',
+      year: '2026',
+      icon: Server,
+      color: 'green',
+      file: null
+    },
+    {
       id: 1,
       category: 'Tecnologia e Desenvolvimento',
       title: 'AI-900: Fundamentos de IA no Azure',
@@ -267,6 +287,7 @@ const Education = () => {
               <p className="text-gray-700 dark:text-gray-300">
                 Análise e Desenvolvimento de Sistemas
               </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Concluído · 2025</p>
             </motion.div>
 
             <motion.div
@@ -292,7 +313,7 @@ const Education = () => {
               <p className="text-gray-700 dark:text-gray-300">
                 Engenharia de Software
               </p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">2026 – Em andamento</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Abr 2026 – Abr 2027</p>
             </motion.div>
 
             <motion.div

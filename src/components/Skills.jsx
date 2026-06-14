@@ -30,7 +30,7 @@ const skillGroups = [
   {
     category: 'Automação & Dados',
     color: 'orange',
-    skills: ['Power Automate', 'n8n', 'Python', 'Pandas', 'OpenAPI / Swagger'],
+    skills: ['n8n', 'Chatwoot', 'Evolution API', 'Power Automate', 'Python', 'Pandas', 'OpenAPI / Swagger'],
   },
 ]
 

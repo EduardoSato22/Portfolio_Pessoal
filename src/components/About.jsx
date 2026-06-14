@@ -38,7 +38,7 @@ const About = () => {
             </p>
             <p className="text-base mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
               Comecei na TI pelo suporte — e foi lá que entendi como sistemas reais funcionam (e
-              falham). Automatizei processos internos com Power Automate e n8n, o que acelerou minha
+              falham). Automatizei processos internos com n8n, Chatwoot e Evolution API em Docker, o que acelerou minha
               transição: percebi que preferia construir as ferramentas a apenas mantê-las.
             </p>
             <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
