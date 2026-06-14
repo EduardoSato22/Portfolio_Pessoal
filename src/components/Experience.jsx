@@ -57,7 +57,7 @@ const Experience = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+      <h3 className="font-display text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Experiência Profissional
       </h3>
       <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-transparent">

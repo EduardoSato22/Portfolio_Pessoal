@@ -61,7 +61,7 @@ const Skills = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+      <h3 className="font-display text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Habilidades e Competências
       </h3>
       <div className="w-full max-w-3xl mx-auto space-y-6">

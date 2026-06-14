@@ -154,7 +154,7 @@ function ProjectDetailModal({ project, onClose }) {
       >
         <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 sticky top-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm z-10">
           <div className="flex items-center gap-3 pr-4 flex-wrap">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
+            <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
             {isProduction && <ProductionBadge />}
           </div>
           <button
@@ -293,7 +293,7 @@ const Projects = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+      <h3 className="font-display text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
         Meus Projetos
       </h3>
       <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 sm:p-8 border border-gray-200 dark:border-transparent">
@@ -313,7 +313,7 @@ const Projects = () => {
             >
               <div className="flex items-center mb-2">
                 <project.icon className="w-6 h-6 text-sky-400 mr-3 flex-shrink-0" />
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white">
+                <h4 className="font-display text-lg font-bold text-gray-900 dark:text-white">
                   {project.title}
                 </h4>
                 {project.isPrivate && (

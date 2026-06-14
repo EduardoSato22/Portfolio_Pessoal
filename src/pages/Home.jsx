@@ -59,7 +59,7 @@ const Home = () => {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="w-32 h-32 sm:w-40 sm:h-40 mx-auto bg-gray-200 dark:bg-gray-800 border-4 border-sky-500 rounded-full flex items-center justify-center mb-6 shadow-lg overflow-hidden"
+          className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full mb-6 shadow-xl ring-4 ring-sky-500/25 overflow-hidden"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -84,7 +84,7 @@ const Home = () => {
         </motion.div>
 
         <motion.h1
-          className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight text-center"
+          className="font-display text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.6 }}
@@ -127,51 +127,52 @@ const Home = () => {
         </motion.div>
 
         <motion.div
-          className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
+          className="mt-8 flex flex-wrap items-center justify-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
         >
           <a
+            href="#projects"
+            className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-2.5 rounded-lg transition-colors inline-flex items-center gap-2 font-medium text-sm"
+          >
+            Ver Projetos
+          </a>
+          <a
             href="#contact"
-            className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
+            className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-sky-500 hover:text-sky-500 dark:hover:text-sky-400 px-6 py-2.5 rounded-lg transition-colors inline-flex items-center gap-2 font-medium text-sm"
           >
-            <Mail size={16} className="mr-2" />
-            Entre em Contato
+            <Mail size={15} />
+            Contato
           </a>
-          <Link
-            to="/curriculo"
-            className="border border-sky-500 text-sky-400 hover:bg-sky-500 hover:text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
-          >
-            <FileText size={16} className="mr-2" />
-            Ver Currículo
-          </Link>
-          <a
-            href="/Curriculo_Eduardo_Sato.pdf"
-            download="Curriculo_Eduardo_Sato.pdf"
-            className="border border-gray-600 text-gray-400 hover:border-sky-500 hover:text-sky-400 px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
-          >
-            <FileText size={16} className="mr-2" />
-            Baixar PDF
-          </a>
-          <a
-            href="https://www.linkedin.com/in/edsato"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-gray-600 text-gray-400 hover:border-sky-500 hover:text-sky-400 px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
-          >
-            <Linkedin size={16} className="mr-2" />
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/EduardoSato22"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-gray-600 text-gray-400 hover:border-sky-500 hover:text-sky-400 px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
-          >
-            <Github size={16} className="mr-2" />
-            GitHub
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://www.linkedin.com/in/edsato"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 hover:border-sky-500 hover:text-sky-500 dark:hover:text-sky-400 text-gray-500 dark:text-gray-400 inline-flex items-center justify-center transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href="https://github.com/EduardoSato22"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 hover:border-sky-500 hover:text-sky-500 dark:hover:text-sky-400 text-gray-500 dark:text-gray-400 inline-flex items-center justify-center transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={16} />
+            </a>
+            <a
+              href="/Curriculo_Eduardo_Sato.pdf"
+              download="Curriculo_Eduardo_Sato.pdf"
+              className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 hover:border-sky-500 hover:text-sky-500 dark:hover:text-sky-400 text-gray-500 dark:text-gray-400 inline-flex items-center justify-center transition-colors"
+              aria-label="Baixar currículo PDF"
+            >
+              <FileText size={16} />
+            </a>
+          </div>
         </motion.div>
       </motion.header>
 
